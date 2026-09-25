@@ -76,12 +76,22 @@ const readingCards = [
 
 const financeCards = [
   {
+    slug: "lego-strategy",
+    type: "Personal finance / Portfolio construction",
+    title: "A Portfolio,<br />Built in Blocks",
+    description:
+      "My Portfolio Building Blocks: a personal framework built from investments with distinct roles.",
+    author: "Dishant Raut",
+    meta: "Portfolio / Allocation",
+    href: "finance/lego-strategy.html",
+  },
+  {
     slug: "money-lessons",
     type: "Personal finance / Investing",
-    title: "Money Lessons<br />for the Retail Investor",
+    title: "Money / Business<br />Lessons",
     description:
-      "Ten money and business lessons on value, skills, income, and freedom, summarized from Rishabh Dev's writing for everyday investors.",
-    author: "Rishabh Dev",
+      "Personal principles on health, insurance, and wealth, alongside lessons on skills, income, compounding, and financial freedom.",
+    author: "Dishant Raut",
     meta: "Money / Business",
     href: "finance/money-lessons.html",
   },
