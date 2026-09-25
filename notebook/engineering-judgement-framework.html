@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Engineering Judgement Framework: how engineers grow from execution to technical authority, from Dishant Raut's notebook."
+    />
+    <title>The Engineering Judgement Framework | Dishant Raut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="note-page" data-page="note" data-back-section="notebook">
+    <main>
+      <a class="note-back" href="../index.html#writing">&larr; Back to the notebook</a>
+      <p class="note-meta">Engineering management &middot; Career growth &middot; Decision-making</p>
+      <h1>The Engineering<br /><em>Judgement Framework</em></h1>
+
+      <div class="note-content">
+        <p>Engineering careers plateau not because engineers stop learning tools, but because they stop evolving their decision-making ability. This framework maps the progression from writing code correctly to making trustworthy technical decisions under uncertainty — through thinking quality, systems awareness, trade-off analysis, long-term consequences, responsibility, and technical influence.</p>
+
+        <h2>The central thesis</h2>
+        <blockquote><p>Great engineers are not defined by the amount of code they write. They are defined by the quality of decisions they are trusted to make.</p></blockquote>
+        <table>
+          <thead><tr><th>Execution</th><th>Judgement</th></tr></thead>
+          <tbody>
+            <tr><td>Builds what was asked</td><td>Decides what should be built</td></tr>
+            <tr><td>Local optimization</td><td>System-wide thinking</td></tr>
+            <tr><td>Technical correctness</td><td>Long-term consequences</td></tr>
+            <tr><td>Follows requirements</td><td>Questions assumptions</td></tr>
+            <tr><td>Solves tasks</td><td>Solves problems</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Level 1 — Execution</h2>
+        <p><strong>Core question: "What should I build?"</strong> Engineers work on clearly defined problems; success is measured by correctness, speed, and implementation quality, with direction coming from others. Execution is the foundation — without it, higher-order thinking becomes irrelevant. The transition required is moving from completing tasks to understanding intent.</p>
+        <ul>
+          <li><strong>Problem framing:</strong> most engineers solve the presented problem instead of discovering the actual one. A perfectly engineered solution to the wrong problem is still failure.</li>
+          <li><strong>Defining success:</strong> delivery alone isn't success — real success is measurable in user impact, reliability, and maintainability, and must be defined before implementation starts.</li>
+          <li><strong>Disciplined execution:</strong> execution quality is a thinking discipline, not just coding speed. Fast but careless execution creates operational debt, debugging complexity, and trust erosion.</li>
+        </ul>
+
+        <h2>Level 2 — Ownership</h2>
+        <p><strong>Core question: "Is this the right thing to build?"</strong> Engineers stop thinking only about tasks and start thinking about outcomes — anticipating edge cases, challenging requirements constructively, and thinking about operational consequences. The transition required is moving from compliance to accountability.</p>
+        <ul>
+          <li><strong>Stakeholder thinking:</strong> software systems exist inside a human ecosystem — users, operators, business stakeholders, support teams, QA, leadership, and future engineers all carry different burdens. Every technical decision redistributes that burden somewhere.</li>
+          <li><strong>Testing strategy:</strong> testing is risk management, not a checkbox activity. Strong testing validates assumptions and system behavior under stress, not just happy paths.</li>
+          <li><strong>Measuring real-world impact:</strong> shipping features doesn't guarantee value — mature engineers track adoption, latency, reliability, retention, and operational load.</li>
+        </ul>
+
+        <h2>Level 3 — System Thinking</h2>
+        <p><strong>Core question: "How does this decision affect the system?"</strong> Engineers move beyond components to think about architecture, scale, resilience, coupling, and long-term flexibility. The transition required is moving from local optimization to system-wide thinking.</p>
+        <ul>
+          <li><strong>System design & architectural flexibility:</strong> architectures must survive change — mature architects optimize for adaptability and operational simplicity, not theoretical perfection.</li>
+          <li><strong>Designing for resilience & scale:</strong> systems fail; resilient systems assume failure and recover gracefully. Scalability without resilience creates fragile systems.</li>
+          <li><strong>Reliability engineering:</strong> reliability is intentionally engineered through observability, alerting, SLOs, and incident management — minimizing blast radius and shortening recovery time.</li>
+          <li><strong>Whole-system thinking:</strong> optimizing one component can damage the overall system; every subsystem affects downstream dependencies and human workflows.</li>
+        </ul>
+
+        <h2>Level 4 — Judgement</h2>
+        <p><strong>Core question: "What is the right compromise here?"</strong> Ambiguity increases, constraints conflict, and perfect solutions disappear. Judgement becomes the ability to decide responsibly and explain trade-offs clearly. The transition required is moving from analysis to responsible decision-making.</p>
+        <ul>
+          <li><strong>Thinking quality:</strong> better engineering starts with better thinking — clarity, reasoning discipline, assumption testing, and intellectual honesty, resisting emotional reasoning and overconfidence.</li>
+          <li><strong>Engineering judgement:</strong> applied wisdom under uncertainty. Correctness alone is insufficient — a decision must also be sustainable, explainable, and operationally viable.</li>
+          <li><strong>Build vs. buy:</strong> not everything should be built internally. Mature thinking optimizes for total lifecycle impact — maintenance, lock-in, and strategic control — not just short-term speed.</li>
+        </ul>
+
+        <h2>Level 5 — Technical Authority</h2>
+        <p><strong>Core question: "Will others trust my decisions?"</strong> Authority is earned through consistent judgement, responsible decisions, and operational wisdom. The transition required is moving from being correct to being trusted.</p>
+        <ul>
+          <li><strong>Engineering stewardship:</strong> senior engineers protect long-term system health — reducing technical debt, protecting reliability, and enabling future teams.</li>
+          <li><strong>Engineering influence:</strong> influence comes from clarity and credibility, not hierarchy — explaining trade-offs clearly and creating confidence.</li>
+          <li><strong>Engineering leadership:</strong> leadership is creating clarity under complexity — simplifying ambiguity, improving decision quality, and shaping engineering culture.</li>
+        </ul>
+
+        <h2>Critical progression transitions</h2>
+        <table>
+          <thead><tr><th>Transition</th><th>Evolution</th></tr></thead>
+          <tbody>
+            <tr><td>Execution &rarr; Ownership</td><td>From tasks to intent</td></tr>
+            <tr><td>Ownership &rarr; System Thinking</td><td>From components to systems</td></tr>
+            <tr><td>System Thinking &rarr; Judgement</td><td>From analysis to responsible trade-offs</td></tr>
+            <tr><td>Judgement &rarr; Authority</td><td>From correctness to trust</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Deep core principles</h2>
+        <ul>
+          <li><strong>Technical growth is cognitive growth:</strong> real seniority isn't more frameworks or syntax knowledge — it's clearer perception, stronger judgement, and better trade-offs.</li>
+          <li><strong>Systems are human systems:</strong> engineering is never purely technical — every system affects users, operators, businesses, support teams, and future engineers.</li>
+          <li><strong>Every decision has hidden costs:</strong> trade-offs always exist. Good engineers surface them early, communicate them clearly, and accept responsibility for consequences.</li>
+          <li><strong>Ambiguity is the real test:</strong> junior engineers succeed in certainty; senior engineers succeed in ambiguity.</li>
+        </ul>
+
+        <h2>Final summary</h2>
+        <p>The framework describes an evolution — Code Execution &rarr; Ownership &rarr; System Awareness &rarr; Trade-off Judgement &rarr; Technical Authority — arguing that engineering maturity is fundamentally about improving perception, decision quality, and responsibility. The ultimate goal isn't merely technical skill; it's becoming someone whose judgement others trust.</p>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
