@@ -106,6 +106,16 @@ const financeCards = [
     href: "finance/why-etfs.html",
   },
   {
+    slug: "insurance-wealth-protection",
+    type: "Personal finance / Insurance",
+    title: "Seven Covers,<br />One Safety Net",
+    description:
+      "How different insurance layers can protect income, savings, family, and long-term wealth from major financial shocks.",
+    author: "Dishant Raut",
+    meta: "Insurance / Wealth protection",
+    href: "finance/insurance-wealth-protection.html",
+  },
+  {
     slug: "money-lessons",
     type: "Personal finance / Investing",
     title: "Money / Business<br />Lessons",
