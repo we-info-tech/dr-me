@@ -76,14 +76,24 @@ const readingCards = [
 
 const financeCards = [
   {
-    slug: "lego-strategy",
+    slug: "portfolio-blocks",
     type: "Personal finance / Portfolio construction",
     title: "A Portfolio,<br />Built in Blocks",
     description:
       "My Portfolio Building Blocks: a personal framework built from investments with distinct roles.",
     author: "Dishant Raut",
     meta: "Portfolio / Allocation",
-    href: "finance/lego-strategy.html",
+    href: "finance/portfolio-blocks.html",
+  },
+  {
+    slug: "freedom-investing",
+    type: "Personal finance / Investing philosophy",
+    title: "Freedom Investing<br />vs. Active Investing",
+    description:
+      "Why I prefer long-term, index-led investing that compounds in the background while I focus on skills, business, and life.",
+    author: "Dishant Raut",
+    meta: "Index / Long-term wealth",
+    href: "finance/freedom-investing.html",
   },
   {
     slug: "money-lessons",
