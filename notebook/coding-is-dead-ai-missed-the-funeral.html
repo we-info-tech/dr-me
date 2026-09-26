@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Coding isn't dying — the cheap part of it is. Why AI raises the value of judgement, review, and system understanding instead of replacing engineers, from Dishant Raut's notebook."
+    />
+    <title>Coding Is Dead? AI Missed the Funeral | Dishant Raut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="note-page" data-page="note" data-back-section="notebook">
+    <main>
+      <a class="note-back" href="../index.html#writing">&larr; Back to the notebook</a>
+      <p class="note-meta">Technology &middot; Applied AI &middot; Software engineering</p>
+      <h1>Coding Is Dead?<br /><em>AI Missed the Funeral</em></h1>
+
+      <div class="note-content">
+        <p>Every few years, something announces the death of programming — 4GLs, visual programming, no-code, low-code, and now AI code generation. Each time, the obituary is written for "coding" in general, when what actually died was the cheapest, most mechanical part of it. AI hasn't ended software engineering. It has moved the job further from typing and closer to judgement.</p>
+
+        <h2>The central thesis</h2>
+        <blockquote><p>AI didn't kill coding — it killed the version of coding that was already the least valuable part of the job.</p></blockquote>
+
+        <h2>An obituary that keeps getting rewritten</h2>
+        <p>This isn't the first time the industry has declared programming over. Fourth-generation languages promised to let business analysts skip programmers. Visual programming promised drag-and-drop software with no code at all. No-code and low-code platforms promised the same, a decade later, with better marketing. Each raised the level of abstraction — and each time, the demand for people who deeply understand systems went up, not down, because someone still has to decide what to build, notice when the abstraction leaks, and fix it when it breaks in a way the tool never anticipated.</p>
+
+        <h2>What AI actually replaces</h2>
+        <p>AI code generation is genuinely good at the parts of coding that were always closer to typing than thinking:</p>
+        <ul>
+          <li><strong>Boilerplate and scaffolding:</strong> CRUD endpoints, config wiring, repetitive test setup — pattern-matched, low-judgement code.</li>
+          <li><strong>Syntax and API recall:</strong> remembering the exact method signature or standard-library call, something search engines were already doing most of anyway.</li>
+          <li><strong>First-draft translation:</strong> converting a clearly specified idea into a first pass of working code.</li>
+        </ul>
+        <p>None of this was ever the hard part of the job for an experienced engineer. It was the part junior engineers spent the most time on — which is exactly why the disruption feels sharpest at the entry level.</p>
+
+        <h2>What AI can't replace — and makes more valuable</h2>
+        <ul>
+          <li><strong>Knowing what to build:</strong> AI answers the prompt it's given; it doesn't discover that the prompt was solving the wrong problem.</li>
+          <li><strong>System understanding:</strong> generated code is locally plausible and often globally wrong — it doesn't know your system's history, constraints, or the incident that led to a defensive check three files away.</li>
+          <li><strong>Verification:</strong> someone has to read the output and decide if it's actually correct, secure, and maintainable — a skill that requires being able to write the code yourself, not just accept what's generated.</li>
+          <li><strong>Debugging root causes:</strong> AI is fluent at proposing plausible fixes; it's far weaker at the kind of causal reasoning that finds why a distributed system is intermittently failing.</li>
+          <li><strong>Taste and trade-offs:</strong> deciding between two working solutions based on long-term cost, team skill, and operational reality is still a human judgement call.</li>
+        </ul>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 460 170" role="img" aria-labelledby="time-title">
+            <title id="time-title">Where an engineer's time goes, before and after AI code generation</title>
+            <text x="115" y="16" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Before AI</text>
+            <rect x="30" y="26" width="170" height="26" fill="#ff775f" fill-opacity="0.35" stroke="#1d2a24" />
+            <text x="115" y="43" text-anchor="middle" font-family="DM Mono, monospace" font-size="9.5" fill="#1d2a24">Writing code — large share</text>
+            <rect x="30" y="56" width="70" height="26" fill="#ece9de" stroke="#1d2a24" />
+            <text x="65" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Review</text>
+            <rect x="100" y="56" width="100" height="26" fill="#ece9de" stroke="#1d2a24" />
+            <text x="150" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Design &amp; debugging</text>
+            <text x="345" y="16" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">With AI</text>
+            <rect x="260" y="26" width="60" height="26" fill="#ff775f" fill-opacity="0.35" stroke="#1d2a24" />
+            <text x="290" y="43" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Writing</text>
+            <rect x="320" y="26" width="110" height="26" fill="#ece9de" stroke="#1d2a24" />
+            <text x="375" y="43" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Verifying output</text>
+            <rect x="260" y="56" width="70" height="26" fill="#ece9de" stroke="#1d2a24" />
+            <text x="295" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Review</text>
+            <rect x="330" y="56" width="100" height="26" fill="#ece9de" stroke="#1d2a24" />
+            <text x="380" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="8.5" fill="#1d2a24">Design &amp; debugging</text>
+            <text x="230" y="105" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">Typing shrinks. Judgement, review, and system understanding don't.</text>
+          </svg>
+          <figcaption>AI compresses the typing, not the thinking</figcaption>
+        </figure>
+
+        <h2>The new bottleneck is verification, not generation</h2>
+        <p>When code was expensive to write, writing it was the bottleneck. Now that a plausible first draft is nearly free, the bottleneck moves to whoever has to decide if that draft is trustworthy — and reading unfamiliar code carefully enough to trust it is often harder than writing it yourself. Teams that treat AI output as "done" instead of "a draft that needs review" are the ones who accumulate the most expensive kind of technical debt: code nobody fully understands, because nobody had to think hard enough to write it.</p>
+
+        <h2>Why the entry-level anxiety is real but misplaced</h2>
+        <p>The genuine disruption is that AI removes the easiest reps junior engineers used to learn on — writing boilerplate was tedious, but it was also how instincts about structure and naming got built. The fix isn't assuming coding is over; it's being deliberate about building judgement through code review, debugging real incidents, and reading other people's code, since the old path of "learn by typing a lot of simple code" is narrowing.</p>
+
+        <h2>Deep core principles</h2>
+        <ul>
+          <li><strong>Abstraction shifts don't remove engineers, they relocate the work:</strong> every previous "end of programming" made engineers more valuable at a higher level, not obsolete.</li>
+          <li><strong>Cheap generation raises the price of verification:</strong> the skill that matters more every year is the ability to tell good code from plausible code.</li>
+          <li><strong>Judgement was always the scarce resource:</strong> typing speed was never what separated senior engineers from junior ones.</li>
+          <li><strong>Tools change the job before they change the title:</strong> "software engineer" will mean something different in practice long before the role disappears in name.</li>
+        </ul>
+
+        <h2>Final summary</h2>
+        <p>Coding isn't dead — the part of it that was pure transcription is. What's left, and what's growing in importance, is exactly the part AI can't do on its own: knowing what to build, understanding the system it lives in, and being able to tell whether the output in front of you is actually right. AI didn't attend coding's funeral. It just took over writing the first drafts of the eulogy.</p>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

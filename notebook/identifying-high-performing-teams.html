@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frameworks for identifying high-performing engineers and teams — DORA, SPACE, OKRs, and the metrics that actually signal performance, from Dishant Raut's notebook."
+    />
+    <title>Identifying High-Performing Teams | Dishant Raut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="note-page" data-page="note" data-back-section="notebook">
+    <main>
+      <a class="note-back" href="../index.html#writing">&larr; Back to the notebook</a>
+      <p class="note-meta">Thinking &middot; Engineering management &middot; Performance measurement</p>
+      <h1>Identifying<br /><em>High-Performing Teams</em></h1>
+
+      <div class="note-content">
+        <p>Most organizations measure what's easy to count — commits, tickets closed, hours logged — instead of what actually signals performance. Identifying a genuinely high-performing team or engineer means combining outcome metrics, workflow metrics, and human signal, because no single number tells the whole story.</p>
+
+        <h2>The central thesis</h2>
+        <blockquote><p>You cannot manage what you measure poorly. Vanity metrics create the illusion of visibility while hiding the behavior they were meant to reveal.</p></blockquote>
+
+        <h2>Why the obvious metrics mislead</h2>
+        <ul>
+          <li><strong>Lines of code & commit count:</strong> reward verbosity and busywork over judgement; a single well-placed deletion can be more valuable than a hundred added lines.</li>
+          <li><strong>Tickets closed:</strong> incentivizes picking easy tickets and splitting work into small, low-risk units instead of tackling what actually matters.</li>
+          <li><strong>Hours logged / activity metrics:</strong> measure presence, not output — easy to game, disconnected from impact.</li>
+        </ul>
+        <p>These metrics are popular because they're cheap to collect, not because they're meaningful. Good measurement systems trade some ease of collection for actual signal.</p>
+
+        <h2>DORA metrics — measuring the delivery pipeline</h2>
+        <p>The DORA (DevOps Research and Assessment) metrics measure how effectively a team ships and recovers, not how busy it looks:</p>
+        <ul>
+          <li><strong>Deployment frequency:</strong> how often code reaches production.</li>
+          <li><strong>Lead time for changes:</strong> how long from commit to production.</li>
+          <li><strong>Change failure rate:</strong> the percentage of deployments that cause a failure.</li>
+          <li><strong>Time to restore service:</strong> how quickly the team recovers from an incident.</li>
+        </ul>
+        <p>Their strength is pairing speed metrics with stability metrics — a team that ships fast but breaks production constantly isn't actually high-performing, and DORA makes that trade-off visible instead of hidden.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 440 160" role="img" aria-labelledby="dora-title">
+            <title id="dora-title">The four DORA metrics, paired as speed and stability</title>
+            <rect x="5" y="10" width="200" height="60" rx="4" fill="#ff775f" fill-opacity="0.14" stroke="#1d2a24" />
+            <text x="105" y="32" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Deployment frequency</text>
+            <text x="105" y="50" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">speed</text>
+            <rect x="235" y="10" width="200" height="60" rx="4" fill="#ff775f" fill-opacity="0.14" stroke="#1d2a24" />
+            <text x="335" y="32" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Lead time for changes</text>
+            <text x="335" y="50" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">speed</text>
+            <rect x="5" y="90" width="200" height="60" rx="4" fill="#ece9de" stroke="#1d2a24" />
+            <text x="105" y="112" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Change failure rate</text>
+            <text x="105" y="130" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">stability</text>
+            <rect x="235" y="90" width="200" height="60" rx="4" fill="#ece9de" stroke="#1d2a24" />
+            <text x="335" y="112" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Time to restore service</text>
+            <text x="335" y="130" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">stability</text>
+          </svg>
+          <figcaption>DORA pairs shipping speed with production stability</figcaption>
+        </figure>
+
+        <h2>SPACE — measuring the whole developer, not just output</h2>
+        <p>The SPACE framework resists collapsing performance into one dimension:</p>
+        <ul>
+          <li><strong>Satisfaction & well-being:</strong> burnout precedes a productivity collapse — it's a leading indicator, not a soft metric.</li>
+          <li><strong>Performance:</strong> outcome quality — reliability, and whether the work achieved its intended goal.</li>
+          <li><strong>Activity:</strong> volume of output, useful only as context alongside the other dimensions, never alone.</li>
+          <li><strong>Communication & collaboration:</strong> how well knowledge flows — documentation quality, review thoroughness, discoverability.</li>
+          <li><strong>Efficiency & flow:</strong> how much time is lost to handoffs, waiting, and context switching rather than focused work.</li>
+        </ul>
+        <p>The framework's core insight: any single dimension optimized in isolation can be gamed. Measuring all five together makes gaming expensive and surfaces genuine performance.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 460 104" role="img" aria-labelledby="space-title">
+            <title id="space-title">The five SPACE dimensions measured together</title>
+            <g font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24" text-anchor="middle">
+              <rect x="11" y="11" width="82" height="82" rx="41" fill="#ff775f" fill-opacity="0.16" stroke="#1d2a24" />
+              <text x="52" y="49">Satis-</text>
+              <text x="52" y="63">faction</text>
+              <rect x="100" y="11" width="82" height="82" rx="41" fill="#ece9de" stroke="#1d2a24" />
+              <text x="141" y="56">Performance</text>
+              <rect x="189" y="11" width="82" height="82" rx="41" fill="#ece9de" stroke="#1d2a24" />
+              <text x="230" y="56">Activity</text>
+              <rect x="278" y="11" width="82" height="82" rx="41" fill="#ece9de" stroke="#1d2a24" />
+              <text x="319" y="49">Communi-</text>
+              <text x="319" y="63">cation</text>
+              <rect x="367" y="11" width="82" height="82" rx="41" fill="#ece9de" stroke="#1d2a24" />
+              <text x="408" y="56">Efficiency</text>
+            </g>
+          </svg>
+          <figcaption>SPACE — five dimensions measured together resist gaming any one of them</figcaption>
+        </figure>
+
+        <h2>OKRs — aligning measurement to outcomes</h2>
+        <p>Objectives and Key Results separate the direction (Objective — qualitative, ambitious) from the evidence of progress (Key Results — quantitative, verifiable). Used well, OKRs stop teams from measuring activity for its own sake by forcing every metric to trace back to an outcome that matters. Used poorly, they become another vanity-metric target that gets gamed like any other number.</p>
+
+        <h2>The 9-box grid — performance vs. potential</h2>
+        <p>Plots people on two axes — current performance and future potential — producing nine categories from "underperformer" to "future leader." Its value isn't the grid itself, it's the discipline of separating <strong>what someone delivers now</strong> from <strong>what they're capable of growing into</strong>, which a single performance score conflates.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 300 300" role="img" aria-labelledby="ninebox-title">
+            <title id="ninebox-title">A 9-box grid plotting performance against potential</title>
+            <rect x="40" y="20" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="120" y="20" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="200" y="20" width="80" height="80" fill="#ff775f" fill-opacity="0.22" stroke="#1d2a24" />
+            <rect x="40" y="100" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="120" y="100" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="200" y="100" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="40" y="180" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="120" y="180" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <rect x="200" y="180" width="80" height="80" fill="#ece9de" stroke="#1d2a24" />
+            <text x="240" y="65" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#1d2a24">Future leader</text>
+            <text x="80" y="216" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#1d2a24">Under-</text>
+            <text x="80" y="230" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#1d2a24">performer</text>
+            <text x="150" y="12" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">HIGH POTENTIAL</text>
+            <text x="150" y="294" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f">LOW POTENTIAL</text>
+            <text x="15" y="220" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f" transform="rotate(-90 15 220)">LOW PERFORMANCE</text>
+            <text x="15" y="60" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#5f675f" transform="rotate(-90 15 60)">HIGH PERFORMANCE</text>
+          </svg>
+          <figcaption>The 9-box grid separates current output from future potential</figcaption>
+        </figure>
+
+        <h2>Reading the signal, not just the number</h2>
+        <ul>
+          <li><strong>Trend over snapshot:</strong> a single data point is noise; the direction of a metric over several cycles is signal.</li>
+          <li><strong>Context before comparison:</strong> comparing raw metrics across teams with different scope, legacy debt, or on-call load produces false rankings.</li>
+          <li><strong>Qualitative signal counts:</strong> peer feedback, code review quality, and mentoring impact rarely show up in dashboards but are often the strongest predictor of real seniority.</li>
+        </ul>
+
+        <h2>Deep core principles</h2>
+        <ul>
+          <li><strong>Every metric can be gamed in isolation:</strong> pairing speed with stability, activity with satisfaction, is what makes a measurement system resistant to gaming.</li>
+          <li><strong>Leading indicators beat lagging ones:</strong> satisfaction and flow efficiency predict problems before output drops; by the time output drops, the damage is already done.</li>
+          <li><strong>Metrics inform judgement, they don't replace it:</strong> numbers tell you where to look closer, not what conclusion to reach.</li>
+          <li><strong>Measure the system, not just the individual:</strong> a struggling metric is often a broken process or unclear ownership, not a personal failing.</li>
+        </ul>
+
+        <h2>Final summary</h2>
+        <p>Identifying genuine high performance means resisting the pull toward whatever is easiest to count. Combine delivery metrics (DORA) with human and workflow metrics (SPACE), anchor them to outcomes (OKRs), separate current output from future potential (9-box), and always read the numbers alongside the qualitative context that gives them meaning.</p>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

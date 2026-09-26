@@ -10,27 +10,38 @@ const categoryLabels = {
 const articles = [
   {
     category: "craft",
-    date: "Draft",
-    status: "Coming soon",
-    title: "The small details that make digital work feel considered",
+    date: "Published",
+    status: "Read now",
+    title: "Software engineering is a craft skill, not just a technical one",
+    link: "notebook/software-engineering-is-a-craft.html",
   },
   {
     category: "thinking",
-    date: "Draft",
-    status: "Coming soon",
-    title: "A useful question is often more valuable than a fast answer",
+    date: "Published",
+    status: "Read now",
+    title: "Decision-making frameworks: matching the process to the problem",
+    link: "notebook/decision-making-frameworks.html",
+  },
+  {
+    category: "thinking",
+    date: "Published",
+    status: "Read now",
+    title: "Identifying high-performing teams: the metrics that actually signal it",
+    link: "notebook/identifying-high-performing-teams.html",
   },
   {
     category: "technology",
-    date: "Draft",
-    status: "Coming soon",
-    title: "Keeping technology human, even when the work gets complex",
+    date: "Published",
+    status: "Read now",
+    title: "Coding is dead? AI missed the funeral",
+    link: "notebook/coding-is-dead-ai-missed-the-funeral.html",
   },
   {
     category: "ai",
-    date: "Draft",
-    status: "Coming soon",
-    title: "Cost-optimized AI: model routing, retrieval, caching, and guardrails",
+    date: "Published",
+    status: "Read now",
+    title: "AI-Ready Organization: an enterprise AI readiness framework",
+    link: "notebook/ai-ready-organization.html",
   },
   {
     category: "engineering-management",
@@ -116,6 +127,16 @@ const financeCards = [
     href: "finance/insurance-wealth-protection.html",
   },
   {
+    slug: "seven-portfolio-reviews",
+    type: "Personal finance / Portfolio management",
+    title: "Why I Review My Portfolio<br />Seven Times a Year",
+    description:
+      "Why I use planned review windows and metric-based decisions instead of reacting to the market every day.",
+    author: "Dishant Raut",
+    meta: "Review / Discipline",
+    href: "finance/seven-portfolio-reviews.html",
+  },
+  {
     slug: "money-lessons",
     type: "Personal finance / Investing",
     title: "Money / Business<br />Lessons",
@@ -141,6 +162,7 @@ const noteShellConfig = {
   reading: { sectionLabel: "Reading", sectionHref: "../index.html#reading", contactHref: "../index.html#contact" },
   finance: { sectionLabel: "Finance", sectionHref: "../index.html#finance", contactHref: "../index.html#contact" },
   notebook: { sectionLabel: "Writing", sectionHref: "../index.html#writing", contactHref: "../index.html#contact" },
+  playbooks: { sectionLabel: "Playbooks", sectionHref: "../index.html#playbooks", contactHref: "../index.html#contact" },
 };
 
 const articleList = document.querySelector("#article-list");
@@ -289,6 +311,13 @@ if (menuButton && navigation) {
     if (window.innerWidth > 700 && navigation.classList.contains("is-open")) {
       setMenuState(false);
     }
+  });
+}
+
+const backToTop = document.querySelector(".back-to-top");
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 400);
   });
 }
 

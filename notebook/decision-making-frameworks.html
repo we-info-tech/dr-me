@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A working set of decision-making frameworks — from Cynefin and the OODA loop to reversible decisions and pre-mortems — from Dishant Raut's notebook."
+    />
+    <title>Decision-Making Frameworks | Dishant Raut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="note-page" data-page="note" data-back-section="notebook">
+    <main>
+      <a class="note-back" href="../index.html#writing">&larr; Back to the notebook</a>
+      <p class="note-meta">Thinking &middot; Decision-making &middot; Mental models</p>
+      <h1>Decision-Making<br /><em>Frameworks</em></h1>
+
+      <div class="note-content">
+        <p>Most bad decisions aren't caused by bad judgement — they're caused by using the wrong framework for the situation. Applying a checklist to a novel problem, or debating endlessly over a decision that's cheap to reverse, wastes time and clarity. This note collects the frameworks worth reaching for, and when each one actually applies.</p>
+
+        <h2>The central thesis</h2>
+        <blockquote><p>The quality of a decision isn't judged by its outcome. It's judged by whether it was the right process, given what was knowable at the time.</p></blockquote>
+
+        <h2>Match the framework to the terrain</h2>
+        <p>The <strong>Cynefin framework</strong> classifies problems before you try to solve them, because the right response changes with the terrain:</p>
+        <ul>
+          <li><strong>Simple:</strong> the cause and effect are obvious — sense, categorize, apply a known best practice.</li>
+          <li><strong>Complicated:</strong> cause and effect exist but need expertise to see — sense, analyze, apply good practice.</li>
+          <li><strong>Complex:</strong> cause and effect are only clear in hindsight — probe with small experiments, sense the result, then respond.</li>
+          <li><strong>Chaotic:</strong> there's no time to analyze — act first to stabilize, then sense and respond.</li>
+        </ul>
+        <p>Treating a complex problem like a simple one is the most common failure — teams write a five-step plan for something that actually needs an experiment.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 400 260" role="img" aria-labelledby="cynefin-title">
+            <title id="cynefin-title">The Cynefin framework's four domains</title>
+            <rect x="1" y="1" width="198" height="128" fill="none" stroke="#1d2a24" stroke-width="1" />
+            <rect x="200" y="1" width="199" height="128" fill="none" stroke="#1d2a24" stroke-width="1" />
+            <rect x="1" y="130" width="198" height="129" fill="none" stroke="#1d2a24" stroke-width="1" />
+            <rect x="200" y="130" width="199" height="129" fill="#ff775f" fill-opacity="0.12" stroke="#1d2a24" stroke-width="1" />
+            <text x="100" y="58" text-anchor="middle" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#1d2a24">Complex</text>
+            <text x="100" y="78" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#5f675f">probe &#8594; sense &#8594; respond</text>
+            <text x="300" y="58" text-anchor="middle" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#1d2a24">Complicated</text>
+            <text x="300" y="78" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#5f675f">sense &#8594; analyze &#8594; respond</text>
+            <text x="100" y="188" text-anchor="middle" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#1d2a24">Chaotic</text>
+            <text x="100" y="208" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#5f675f">act &#8594; sense &#8594; respond</text>
+            <text x="300" y="188" text-anchor="middle" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#1d2a24">Simple</text>
+            <text x="300" y="208" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#5f675f">sense &#8594; categorize &#8594; respond</text>
+          </svg>
+          <figcaption>The Cynefin framework — classify the terrain before choosing a response</figcaption>
+        </figure>
+
+        <h2>Speed under pressure: the OODA loop</h2>
+        <p>Observe, Orient, Decide, Act. Originally a fighter-pilot framework, its real value is realizing that <strong>orientation</strong> — your mental model of the situation — is usually the bottleneck, not the decision itself. Two people looking at the same facts (Observe) can reach opposite decisions because their Orient step differs. Improving decision speed means updating your mental models constantly, not just deciding faster.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 320 320" role="img" aria-labelledby="ooda-title">
+            <title id="ooda-title">The OODA loop cycling through Observe, Orient, Decide, Act</title>
+            <circle cx="160" cy="40" r="34" fill="#ece9de" stroke="#1d2a24" />
+            <text x="160" y="45" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Observe</text>
+            <circle cx="280" cy="160" r="34" fill="#ece9de" stroke="#1d2a24" />
+            <text x="280" y="165" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Orient</text>
+            <circle cx="160" cy="280" r="34" fill="#ff775f" fill-opacity="0.18" stroke="#1d2a24" />
+            <text x="160" y="285" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Decide</text>
+            <circle cx="40" cy="160" r="34" fill="#ece9de" stroke="#1d2a24" />
+            <text x="40" y="165" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1d2a24">Act</text>
+            <path d="M 184.04 64.04 L 255.96 135.96" fill="none" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#arrow)" />
+            <path d="M 255.96 184.04 L 184.04 255.96" fill="none" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#arrow)" />
+            <path d="M 135.96 255.96 L 64.04 184.04" fill="none" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#arrow)" />
+            <path d="M 64.04 135.96 L 135.96 64.04" fill="none" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#arrow)" />
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#1d2a24" />
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>The OODA loop — orientation is usually the bottleneck, not the decision</figcaption>
+        </figure>
+
+        <h2>Reversible vs. irreversible: one-way and two-way doors</h2>
+        <p>Not every decision deserves the same amount of deliberation. Splitting decisions by reversibility changes how much process they deserve:</p>
+        <ul>
+          <li><strong>Two-way doors:</strong> cheap to reverse — decide fast, with incomplete information, and correct course later. Most decisions are this type.</li>
+          <li><strong>One-way doors:</strong> expensive or impossible to reverse — slow down, gather more data, involve more judgement.</li>
+        </ul>
+        <p>Most organizational slowness comes from treating two-way doors like one-way doors — over-analyzing decisions that could simply be tried and adjusted.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 400 240" role="img" aria-labelledby="doors-title">
+            <title id="doors-title">Two-way doors decided fast versus one-way doors decided slowly</title>
+            <text x="85" y="22" text-anchor="middle" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1d2a24">Two-way door</text>
+            <rect x="30" y="34" width="110" height="120" rx="4" fill="#ece9de" stroke="#1d2a24" />
+            <circle cx="120" cy="94" r="4" fill="#1d2a24" />
+            <path d="M55 178 H115" fill="none" stroke="#ff775f" stroke-width="2.5" marker-end="url(#arrow-coral)" />
+            <path d="M115 178 H55" fill="none" stroke="#ff775f" stroke-width="2.5" marker-end="url(#arrow-coral)" />
+            <text x="85" y="208" text-anchor="middle" font-family="DM Mono, monospace" font-size="9.5" fill="#5f675f">decide fast, adjust later</text>
+            <text x="315" y="22" text-anchor="middle" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1d2a24">One-way door</text>
+            <rect x="260" y="34" width="110" height="120" rx="4" fill="#ece9de" stroke="#1d2a24" />
+            <circle cx="270" cy="94" r="4" fill="#1d2a24" />
+            <path d="M285 178 H345" fill="none" stroke="#1d2a24" stroke-width="2.5" marker-end="url(#arrow2)" />
+            <text x="315" y="208" text-anchor="middle" font-family="DM Mono, monospace" font-size="9.5" fill="#5f675f">slow down, gather more data</text>
+            <defs>
+              <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#1d2a24" />
+              </marker>
+              <marker id="arrow-coral" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#ff775f" />
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>Match the deliberation to how reversible the decision is</figcaption>
+        </figure>
+
+        <h2>Stress-testing a decision before it's made</h2>
+        <p>A <strong>pre-mortem</strong> asks: "Imagine this decision failed badly six months from now — what went wrong?" Working backward from an imagined failure surfaces risks that forward-looking planning misses, because it removes the social pressure of sounding negative — everyone is just describing a hypothetical.</p>
+        <p><strong>Second-order thinking</strong> extends this further: after answering "what happens if I do this?", ask "and then what happens after that?" First-order thinking optimizes for the immediate effect; second-order thinking catches the consequence of the consequence.</p>
+
+        <h2>Comparing options honestly</h2>
+        <ul>
+          <li><strong>Weighted decision matrix:</strong> list options against criteria, weight the criteria by importance, and score each option — useful when a decision has multiple competing factors and gut feeling keeps changing.</li>
+          <li><strong>Expected value:</strong> multiply the probability of each outcome by its impact. Prevents chasing a big upside while ignoring how unlikely it is, or fearing a loss so unlikely it isn't worth the anxiety.</li>
+          <li><strong>Regret minimization:</strong> project forward and ask which choice you'd regret more not having tried. Useful specifically when analysis is exhausted but the decision still feels stuck.</li>
+        </ul>
+
+        <h2>Deciding who decides</h2>
+        <p>Many slow decisions aren't unclear on the merits — they're unclear on <strong>who owns the call</strong>. Frameworks like <strong>DACI</strong> (Driver, Approver, Contributors, Informed) or <strong>RAPID</strong> (Recommend, Agree, Perform, Input, Decide) assign explicit roles so a decision doesn't stall waiting for consensus that was never required in the first place.</p>
+
+        <h2>Deep core principles</h2>
+        <ul>
+          <li><strong>Process over outcome:</strong> a good decision can still produce a bad result, and a lucky decision can still be a bad process. Judge the reasoning, not just what happened.</li>
+          <li><strong>Reversibility sets the pace:</strong> the less a decision can be undone, the more deliberation it deserves — and no more.</li>
+          <li><strong>Orientation is the real bottleneck:</strong> most slow or wrong decisions come from a stale or incomplete mental model, not from indecision itself.</li>
+          <li><strong>Ownership beats consensus:</strong> clarity on who decides is often more valuable than more data.</li>
+        </ul>
+
+        <h2>Final summary</h2>
+        <p>There is no single "best" decision-making framework — there's only the right one for the situation in front of you. Classify the terrain, match the deliberation to the reversibility, stress-test with a pre-mortem, compare options honestly, and make sure someone actually owns the call.</p>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

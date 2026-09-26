@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An enterprise AI readiness framework — from agentic architecture and memory to evals, security, governance, FinOps and organizational maturity — from Dishant Raut's notebook."
+    />
+    <title>AI-Ready Organization | Dishant Raut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="note-page" data-page="note" data-back-section="notebook">
+    <main>
+      <a class="note-back" href="../index.html#writing">&larr; Back to the notebook</a>
+      <p class="note-meta">Applied AI &middot; Enterprise architecture &middot; AI governance</p>
+      <h1>AI-Ready<br /><em>Organization</em></h1>
+
+      <div class="note-content">
+        <p>From LLMs to production-grade agentic AI — architecture, memory, evals, testing, security, models, and governance. This is an enterprise AI readiness framework built around six goals: <strong>understand</strong> a common language for AI, RAG and agents; <strong>design</strong> production-ready architecture patterns; <strong>validate</strong> systems systematically; <strong>protect</strong> them with guardrails and governance; <strong>operate</strong> with visibility into quality, reliability, latency and cost; and <strong>scale</strong> into a repeatable AI platform.</p>
+
+        <h2>Level 1 — Foundation</h2>
+        <p>Level 1 covers AI evolution and why it matters — building the shared vocabulary for LLMs, RAG, and agents that every level after this one assumes you already have.</p>
+
+        <h2>Level 2 — Engineering</h2>
+        <p class="note-source">Architecture, patterns, and use cases.</p>
+
+        <h3>01 &middot; From LLMs to Agentic Systems</h3>
+        <p>The system changes from generating answers to pursuing goals through actions.</p>
+        <ul>
+          <li><strong>LLM:</strong> Prompt &rarr; response.</li>
+          <li><strong>RAG:</strong> Response grounded in enterprise knowledge.</li>
+          <li><strong>Tool-using AI:</strong> Model can call APIs and systems.</li>
+          <li><strong>Agent:</strong> Goal &rarr; Reason &rarr; Act &rarr; Observe &rarr; Repeat.</li>
+          <li><strong>Multi-agent:</strong> Specialized agents collaborate.</li>
+          <li><strong>Long-running agent:</strong> Stateful, event-driven, persistent execution.</li>
+        </ul>
+
+        <h3>02 &middot; Enterprise AI Architecture</h3>
+        <p>A production AI system is much larger than the model.</p>
+
+        <figure class="note-figure">
+          <svg viewBox="0 0 460 470" role="img" aria-labelledby="ref-arch-title">
+            <title id="ref-arch-title">The nine layers of a reference enterprise AI architecture</title>
+            <rect x="5" y="5" width="450" height="46" fill="#ff775f" fill-opacity="0.18" stroke="#1d2a24" />
+            <text x="20" y="24" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Experience</text>
+            <text x="20" y="40" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Apps, copilots, APIs, workflows</text>
+            <rect x="5" y="57" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="76" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">AI Gateway</text>
+            <text x="20" y="92" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Routing, policy, rate limits, caching</text>
+            <rect x="5" y="109" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="128" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Agent / Orchestrator</text>
+            <text x="20" y="144" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Planning, state, execution</text>
+            <rect x="5" y="161" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="180" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Models</text>
+            <text x="20" y="196" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">LLMs, embedding, reranking, multimodal</text>
+            <rect x="5" y="213" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="232" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Knowledge</text>
+            <text x="20" y="248" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">RAG, search, databases, documents</text>
+            <rect x="5" y="265" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="284" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Tools</text>
+            <text x="20" y="300" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">APIs, SaaS, enterprise systems</text>
+            <rect x="5" y="317" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="336" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Memory</text>
+            <text x="20" y="352" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Working, semantic, episodic, procedural</text>
+            <rect x="5" y="369" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="388" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Trust layer</text>
+            <text x="20" y="404" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Guardrails, IAM, approvals, audit</text>
+            <rect x="5" y="421" width="450" height="46" fill="#ece9de" stroke="#1d2a24" />
+            <text x="20" y="440" font-family="Manrope, sans-serif" font-size="11.5" font-weight="700" fill="#1d2a24">Control plane</text>
+            <text x="20" y="456" font-family="DM Mono, monospace" font-size="8.5" fill="#5f675f">Evals, traces, cost, governance</text>
+          </svg>
+          <figcaption>Reference architecture — the model is one layer among nine</figcaption>
+        </figure>
+
+        <p><strong>Agentic AI design patterns:</strong></p>
+          <table>
+            <thead><tr><th>Pattern</th><th>What it does</th><th>Typical use case</th></tr></thead>
+            <tbody>
+              <tr><td>Prompt chaining</td><td>Sequential model steps</td><td>Document processing</td></tr>
+              <tr><td>Routing</td><td>Select path/model</td><td>Support triage</td></tr>
+              <tr><td>Parallelization</td><td>Run independent tasks together</td><td>Research</td></tr>
+              <tr><td>Tool use</td><td>Invoke external systems</td><td>Enterprise assistant</td></tr>
+              <tr><td>ReAct</td><td>Reason + act iteratively</td><td>Troubleshooting</td></tr>
+              <tr><td>Planning</td><td>Create execution plan</td><td>Complex workflows</td></tr>
+              <tr><td>Reflection</td><td>Critique and improve</td><td>Code/content</td></tr>
+              <tr><td>Evaluator-optimizer</td><td>Generate + evaluate loop</td><td>Quality-sensitive output</td></tr>
+              <tr><td>Human-in-the-loop</td><td>Approval at control points</td><td>High-risk actions</td></tr>
+              <tr><td>Multi-agent</td><td>Specialists collaborate</td><td>Software / research</td></tr>
+              <tr><td>Hierarchical agent</td><td>Supervisor &rarr; workers</td><td>Enterprise workflows</td></tr>
+              <tr><td>Event-driven</td><td>React to events</td><td>Ops monitoring</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Choosing the right agent pattern:</strong></p>
+        <ul>
+          <li><strong>Deterministic workflow:</strong> known sequence &rarr; use workflows first.</li>
+          <li><strong>Open-ended task:</strong> need dynamic decisions &rarr; agent.</li>
+          <li><strong>Many specialists:</strong> decompose &rarr; multi-agent.</li>
+          <li><strong>High-risk action:</strong> add approval + least privilege.</li>
+          <li><strong>High quality bar:</strong> add evaluator / verification.</li>
+          <li><strong>Frequent events:</strong> use event-driven execution.</li>
+        </ul>
+
+        <h3>03 &middot; Agent Harness &amp; Orchestration</h3>
+        <p>The harness controls how an agent reasons, acts, retries and stops.</p>
+        <p><strong>What belongs in an agent harness:</strong></p>
+        <ul>
+          <li><strong>State:</strong> conversation, task and workflow state.</li>
+          <li><strong>Context:</strong> what the model sees at each step.</li>
+          <li><strong>Tools:</strong> discovery, schema, permissions.</li>
+          <li><strong>Execution:</strong> loops, retries, timeouts.</li>
+          <li><strong>Budgets:</strong> tokens, time, cost, actions.</li>
+          <li><strong>Termination:</strong> success, failure, escalation.</li>
+          <li><strong>Safety:</strong> policy checks and approvals.</li>
+          <li><strong>Tracing:</strong> full trajectory and tool calls.</li>
+          <li><strong>Recovery:</strong> checkpointing and resumability.</li>
+        </ul>
+
+        <h3>04 &middot; Agentic AI Memory</h3>
+        <p>Memory turns a stateless model call into a stateful system.</p>
+          <table>
+            <thead><tr><th>Memory</th><th>Purpose</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>Working / context</td><td>Current task state</td><td>Current plan and tool results</td></tr>
+              <tr><td>Short-term</td><td>Recent interaction</td><td>Last conversation turns</td></tr>
+              <tr><td>Semantic</td><td>Facts / knowledge</td><td>User preferences, domain facts</td></tr>
+              <tr><td>Episodic</td><td>Past experiences</td><td>Previous successful resolution</td></tr>
+              <tr><td>Procedural</td><td>How to perform tasks</td><td>Known workflow / policy</td></tr>
+              <tr><td>Profile</td><td>Stable user context</td><td>Role, locale, permissions</td></tr>
+            </tbody>
+          </table>
+        <p><strong>Design questions:</strong> what do we remember? For how long? Who can retrieve it? How do we correct or delete it?</p>
+        <p><strong>Key risks:</strong> memory poisoning, stale facts, privacy leakage, cross-tenant retrieval.</p>
+
+        <p><strong>RAG and Agentic RAG:</strong></p>
+        <ul>
+          <li><strong>Ingestion:</strong> parse &rarr; chunk &rarr; enrich &rarr; index.</li>
+          <li><strong>Retrieval:</strong> keyword + vector + hybrid search.</li>
+          <li><strong>Reranking:</strong> prioritize relevant evidence.</li>
+          <li><strong>Grounding:</strong> answer from retrieved evidence.</li>
+          <li><strong>Agentic RAG:</strong> agent decides what / when to retrieve.</li>
+          <li><strong>Multi-hop:</strong> retrieve &rarr; reason &rarr; retrieve again.</li>
+        </ul>
+
+        <h2>Level 3 — Deep Tech</h2>
+        <p class="note-source">Implementation, testing, evals, governance, models, and production engineering.</p>
+
+        <h3>05 &middot; Evals &amp; Observability</h3>
+        <p>Quality must be measured before and after deployment.</p>
+        <p><strong>AI quality is multi-dimensional:</strong></p>
+        <ul>
+          <li><strong>Correctness:</strong> is the answer factually right?</li>
+          <li><strong>Groundedness:</strong> is it supported by evidence?</li>
+          <li><strong>Relevance:</strong> does it answer the task?</li>
+          <li><strong>Completeness:</strong> did it cover required information?</li>
+          <li><strong>Safety:</strong> did it avoid prohibited behavior?</li>
+          <li><strong>Tool correctness:</strong> did it choose / call tools correctly?</li>
+          <li><strong>Trajectory:</strong> was the sequence of actions appropriate?</li>
+          <li><strong>Reliability:</strong> does it work consistently?</li>
+          <li><strong>Cost / latency:</strong> is it economically viable?</li>
+        </ul>
+
+          <table>
+            <thead><tr><th>Offline / pre-production</th><th>Online / production</th></tr></thead>
+            <tbody>
+              <tr><td>Golden datasets</td><td>Real user traffic / traces</td></tr>
+              <tr><td>Regression suites</td><td>Live quality signals</td></tr>
+              <tr><td>Synthetic test data</td><td>User feedback</td></tr>
+              <tr><td>Adversarial test sets</td><td>Drift / failure detection</td></tr>
+              <tr><td>Model comparisons</td><td>Latency &amp; cost</td></tr>
+              <tr><td>Release gates</td><td>Alerts &amp; incident response</td></tr>
+            </tbody>
+          </table>
+        <blockquote><p>Evaluate the system you deploy — not just the underlying model.</p></blockquote>
+
+        <p><strong>Observability for agentic systems:</strong></p>
+        <ul>
+          <li><strong>Trace:</strong> end-to-end request.</li>
+          <li><strong>Span:</strong> LLM / retrieval / tool call.</li>
+          <li><strong>Trajectory:</strong> sequence of decisions.</li>
+          <li><strong>Context:</strong> prompts, retrieved evidence, state.</li>
+          <li><strong>Outcome:</strong> task success / failure.</li>
+          <li><strong>Economics:</strong> tokens, cost, latency.</li>
+          <li><strong>Safety:</strong> policy violations / blocks.</li>
+          <li><strong>Feedback:</strong> human / automated signals.</li>
+          <li><strong>Drift:</strong> quality change over time.</li>
+        </ul>
+
+        <h3>06 &middot; LLM-as-a-Judge</h3>
+        <p>Use another model as an evaluator — but treat the judge as a system that needs validation.</p>
+        <p><strong>LLM-as-a-Judge patterns:</strong></p>
+        <ul>
+          <li><strong>Pointwise:</strong> score one response against a rubric.</li>
+          <li><strong>Pairwise:</strong> compare two responses.</li>
+          <li><strong>Reference-based:</strong> compare with expected answer.</li>
+          <li><strong>Reference-free:</strong> judge quality without a gold answer.</li>
+          <li><strong>Rubric-based:</strong> score dimensions separately.</li>
+          <li><strong>Trajectory judge:</strong> evaluate multi-step behavior.</li>
+          <li><strong>Judge calibration:</strong> compare against human labels.</li>
+          <li><strong>Multi-judge:</strong> use independent evaluators.</li>
+          <li><strong>Human escalation:</strong> review ambiguous / high-risk cases.</li>
+        </ul>
+
+        <p><strong>Judge failure modes:</strong></p>
+          <table>
+            <thead><tr><th>Failure mode</th><th>What can happen</th><th>Mitigation</th></tr></thead>
+            <tbody>
+              <tr><td>Position bias</td><td>Preference for first/second option</td><td>Randomize order</td></tr>
+              <tr><td>Verbosity bias</td><td>Longer answer looks better</td><td>Rubric + length control</td></tr>
+              <tr><td>Self-preference</td><td>Judge favors similar model style</td><td>Independent judge</td></tr>
+              <tr><td>Weak rubric</td><td>Scores are inconsistent</td><td>Detailed criteria + examples</td></tr>
+              <tr><td>Judge drift</td><td>Model/version changes scores</td><td>Version and recalibrate</td></tr>
+              <tr><td>Low human agreement</td><td>Automated score is misleading</td><td>Human validation sample</td></tr>
+            </tbody>
+          </table>
+
+        <h3>07 &middot; Testing LLM, RAG &amp; Agentic Systems</h3>
+        <p>AI testing needs conventional software testing plus AI-specific behavioral testing.</p>
+          <table>
+            <thead><tr><th>Test layer</th><th>LLM</th><th>RAG</th><th>Agent</th><th>Multi-agent</th></tr></thead>
+            <tbody>
+              <tr><td>Unit</td><td>Prompt / parser</td><td>Retriever / chunker</td><td>Tool wrapper</td><td>Agent component</td></tr>
+              <tr><td>Integration</td><td>API / schema</td><td>Retriever + generator</td><td>Agent + tools</td><td>Agent coordination</td></tr>
+              <tr><td>Functional</td><td>Task correctness</td><td>Grounded answer</td><td>Goal completion</td><td>Workflow completion</td></tr>
+              <tr><td>Adversarial</td><td>Jailbreaks</td><td>Poisoned docs</td><td>Prompt injection</td><td>Collusion / escalation</td></tr>
+              <tr><td>Regression</td><td>Golden prompts</td><td>Golden Q&amp;A</td><td>Golden trajectories</td><td>Scenario suites</td></tr>
+              <tr><td>Production</td><td>Quality drift</td><td>Retrieval drift</td><td>Trajectory drift</td><td>System outcomes</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Use case &mdash; Enterprise HR RAG assistant:</strong></p>
+        <ul>
+          <li><strong>Retrieval:</strong> does the system fetch the right policy?</li>
+          <li><strong>Grounding:</strong> is the answer supported by policy text?</li>
+          <li><strong>Citation:</strong> does citation point to the right source?</li>
+          <li><strong>Access control:</strong> can employee A retrieve employee B data?</li>
+          <li><strong>Out-of-domain:</strong> does it refuse unrelated requests?</li>
+          <li><strong>Freshness:</strong> does it use current policy versions?</li>
+        </ul>
+
+        <p><strong>Use case &mdash; IT incident-resolution agent:</strong></p>
+        <ul>
+          <li><strong>Tool choice:</strong> correct monitoring / ticket / remediation tool.</li>
+          <li><strong>Parameters:</strong> correct resource, environment and scope.</li>
+          <li><strong>Trajectory:</strong> logical sequence of investigation.</li>
+          <li><strong>Safety:</strong> no unauthorized production change.</li>
+          <li><strong>Recovery:</strong> correct behavior after tool failure.</li>
+          <li><strong>Escalation:</strong> human approval when required.</li>
+          <li><strong>Budget:</strong> stops within action / cost limits.</li>
+          <li><strong>Outcome:</strong> incident actually resolved.</li>
+        </ul>
+
+        <p><strong>Test data &amp; training / evaluation data strategy:</strong></p>
+        <ul>
+          <li><strong>Real examples:</strong> representative production tasks, sanitized.</li>
+          <li><strong>Golden set:</strong> expert-validated expected behavior.</li>
+          <li><strong>Synthetic data:</strong> generate breadth and edge cases.</li>
+          <li><strong>Adversarial data:</strong> prompt injection, abuse, boundary cases.</li>
+          <li><strong>Hard negatives:</strong> plausible but incorrect / irrelevant evidence.</li>
+          <li><strong>Long-tail cases:</strong> rare failures and unusual workflows.</li>
+          <li><strong>Trajectory data:</strong> successful + failed action sequences.</li>
+          <li><strong>Feedback loop:</strong> feed verified failures back into datasets.</li>
+        </ul>
+
+        <h3>08 &middot; AI Security &amp; Guardrails</h3>
+        <p>Security moves from protecting the model API to controlling what an agent can know and do.</p>
+          <table>
+            <thead><tr><th>Layer</th><th>Representative risks</th><th>Controls</th></tr></thead>
+            <tbody>
+              <tr><td>Input</td><td>Prompt injection, jailbreak</td><td>Input filters, policy checks</td></tr>
+              <tr><td>Context</td><td>Data leakage, poisoned content</td><td>ACLs, provenance, isolation</td></tr>
+              <tr><td>Memory</td><td>Memory poisoning, stale data</td><td>Validation, TTL, access control</td></tr>
+              <tr><td>Tools</td><td>Excessive permissions, abuse</td><td>Least privilege, allowlists</td></tr>
+              <tr><td>Runtime</td><td>Loops, resource exhaustion</td><td>Budgets, timeouts, rate limits</td></tr>
+              <tr><td>Output</td><td>PII, unsafe content</td><td>Output policies, redaction</td></tr>
+              <tr><td>Human</td><td>Approval bypass</td><td>Explicit HITL checkpoints</td></tr>
+              <tr><td>Audit</td><td>Missing evidence</td><td>Immutable traces / logs</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Agent permissions &mdash; least privilege:</strong></p>
+        <ul>
+          <li><strong>Identity:</strong> which agent / user identity?</li>
+          <li><strong>Data:</strong> which data can it read?</li>
+          <li><strong>Tools:</strong> which APIs can it call?</li>
+          <li><strong>Parameters:</strong> what arguments are permitted?</li>
+          <li><strong>Actions:</strong> read / write / delete / execute?</li>
+          <li><strong>Environment:</strong> dev / test / production?</li>
+          <li><strong>Approval:</strong> which actions need a human?</li>
+          <li><strong>Audit:</strong> can every decision be reconstructed?</li>
+        </ul>
+
+        <h3>09 &middot; AI Governance &amp; Responsible AI</h3>
+        <p>Governance should enable safe scaling, not become a final-stage checklist.</p>
+        <ul>
+          <li><strong>AI inventory:</strong> what models, agents and use cases exist?</li>
+          <li><strong>Risk classification:</strong> what is the impact of failure?</li>
+          <li><strong>Data governance:</strong> what data can enter / leave AI systems?</li>
+          <li><strong>Human oversight:</strong> where is human approval mandatory?</li>
+          <li><strong>Model governance:</strong> versions, changes, approvals.</li>
+          <li><strong>Auditability:</strong> can decisions and actions be traced?</li>
+          <li><strong>Vendor governance:</strong> contracts, data use, SLAs.</li>
+          <li><strong>Incident management:</strong> how do we respond to AI failures?</li>
+          <li><strong>Policy:</strong> what is allowed, restricted or prohibited?</li>
+        </ul>
+
+        <h3>10 &middot; LLM Provider Strategy</h3>
+        <p>Compare providers by workload fit, enterprise requirements and economics — not by a single benchmark.</p>
+          <table>
+            <thead><tr><th>Dimension</th><th>Questions to evaluate</th></tr></thead>
+            <tbody>
+              <tr><td>Reasoning</td><td>How well does it solve complex tasks?</td></tr>
+              <tr><td>Coding</td><td>How well does it generate / modify / debug code?</td></tr>
+              <tr><td>Tool use</td><td>How reliable is structured tool calling?</td></tr>
+              <tr><td>Context</td><td>How well does it handle long context?</td></tr>
+              <tr><td>Multimodal</td><td>Text, image, audio, video capabilities?</td></tr>
+              <tr><td>Latency</td><td>What is p50 / p95 response time?</td></tr>
+              <tr><td>Cost</td><td>Input/output token economics?</td></tr>
+              <tr><td>Reliability</td><td>Availability, rate limits, failure modes?</td></tr>
+              <tr><td>Enterprise</td><td>Security, privacy, compliance, regional controls?</td></tr>
+              <tr><td>Customization</td><td>Fine-tuning, adaptation, prompt control?</td></tr>
+              <tr><td>Ecosystem</td><td>SDKs, agents, observability, integrations?</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Provider landscape to monitor:</strong></p>
+        <ul>
+          <li><strong>OpenAI:</strong> general-purpose frontier models, reasoning, multimodal and agent tooling.</li>
+          <li><strong>Anthropic:</strong> reasoning, coding and enterprise agent workloads.</li>
+          <li><strong>Google:</strong> Gemini ecosystem, multimodal and long-context workloads.</li>
+          <li><strong>AWS:</strong> Bedrock multi-model platform and AWS-native integration.</li>
+          <li><strong>Microsoft:</strong> Azure-hosted model ecosystem and enterprise integration.</li>
+          <li><strong>Open models:</strong> Llama, Mistral, Qwen and other deployable model families.</li>
+        </ul>
+
+        <h3>11 &middot; AI Gateway &amp; Model Routing</h3>
+        <p>Decouple applications from individual model vendors.</p>
+        <p><strong>Why an AI gateway:</strong></p>
+        <ul>
+          <li><strong>Routing:</strong> choose model by task.</li>
+          <li><strong>Fallback:</strong> recover from provider outage.</li>
+          <li><strong>Policy:</strong> centralize model / data rules.</li>
+          <li><strong>Caching:</strong> reduce latency and cost.</li>
+          <li><strong>Rate limits:</strong> protect providers and budgets.</li>
+          <li><strong>Observability:</strong> centralized telemetry.</li>
+          <li><strong>A/B tests:</strong> compare model versions.</li>
+          <li><strong>Cost control:</strong> route simple tasks to cheaper models.</li>
+          <li><strong>Portability:</strong> reduce application-level vendor lock-in.</li>
+        </ul>
+
+        <h2>Level 4 — Organizational Readiness</h2>
+        <p class="note-source">Turning the technical concepts into an organizational AI strategy.</p>
+
+        <h3>12 &middot; AI FinOps &amp; Production Economics</h3>
+        <p>The right metric is often cost per successful task — not cost per API call.</p>
+        <p><strong>Agentic cost model:</strong></p>
+        <ul>
+          <li><strong>LLM calls:</strong> number &times; input/output tokens.</li>
+          <li><strong>Retrieval:</strong> embedding + search + reranking.</li>
+          <li><strong>Tools:</strong> external API / compute costs.</li>
+          <li><strong>Retries:</strong> failures can multiply spend.</li>
+          <li><strong>Context:</strong> large history increases token usage.</li>
+          <li><strong>Latency:</strong> more steps can increase user wait.</li>
+          <li><strong>Caching:</strong> reuse expensive computation.</li>
+          <li><strong>Success rate:</strong> cost per successful task.</li>
+        </ul>
+
+        <p><strong>AI engineering lifecycle:</strong></p>
+        <ul>
+          <li><strong>Discover:</strong> use case + risk + success criteria.</li>
+          <li><strong>Design:</strong> architecture + model + data.</li>
+          <li><strong>Build:</strong> prompts + tools + RAG + memory.</li>
+          <li><strong>Test:</strong> functional + adversarial + regression.</li>
+          <li><strong>Evaluate:</strong> golden sets + judges + humans.</li>
+          <li><strong>Deploy:</strong> guardrails + approvals + rollout.</li>
+          <li><strong>Observe:</strong> traces + quality + cost.</li>
+          <li><strong>Learn:</strong> feedback + failures + new eval data.</li>
+          <li><strong>Improve:</strong> prompt / model / architecture iteration.</li>
+        </ul>
+
+        <p><strong>Putting it together — a production agent request:</strong></p>
+        <figure class="note-figure">
+          <svg viewBox="0 0 460 200" role="img" aria-labelledby="agent-flow-title">
+            <title id="agent-flow-title">The path of a request through a production agent, from user to evals and traces</title>
+            <rect x="5" y="20" width="85" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="47" y="42" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">User</text>
+            <text x="47" y="58" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Goal / request</text>
+            <rect x="98" y="20" width="85" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="140" y="42" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Gateway</text>
+            <text x="140" y="58" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Identity + routing</text>
+            <rect x="191" y="20" width="85" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="233" y="42" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Harness</text>
+            <text x="233" y="58" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Plan + execute</text>
+            <rect x="284" y="20" width="171" height="50" fill="#ff775f" fill-opacity="0.18" stroke="#1d2a24" />
+            <text x="369" y="42" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Memory / RAG / Tools</text>
+            <text x="369" y="58" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">State, evidence, actions</text>
+            <rect x="5" y="100" width="146" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="78" y="122" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Model</text>
+            <text x="78" y="138" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Reasoning / generation</text>
+            <rect x="159" y="100" width="146" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="232" y="122" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Guardrails</text>
+            <text x="232" y="138" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Input / output / action checks</text>
+            <rect x="313" y="100" width="142" height="50" fill="#ece9de" stroke="#1d2a24" />
+            <text x="384" y="122" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#1d2a24">Evals + traces</text>
+            <text x="384" y="138" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#5f675f">Continuous quality &amp; audit</text>
+            <path d="M90 45 H98" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <path d="M183 45 H191" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <path d="M276 45 H284" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <path d="M369 70 V85 H78 V100" fill="none" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <path d="M151 125 H159" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <path d="M305 125 H313" stroke="#1d2a24" stroke-width="1.5" marker-end="url(#agent-arrow)" />
+            <defs>
+              <marker id="agent-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#1d2a24" />
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>A request's path: user &rarr; gateway &rarr; harness &rarr; memory/RAG/tools &rarr; model &rarr; guardrails &rarr; evals</figcaption>
+        </figure>
+
+        <p><strong>Production architecture principles:</strong></p>
+        <ul>
+          <li>Start deterministic; introduce autonomy only where it creates measurable value.</li>
+          <li>Treat the agent harness, tools, memory and data access as first-class production components.</li>
+          <li>Design for failure: timeouts, retries, checkpoints, fallbacks and human escalation.</li>
+          <li>Make every important action observable and auditable.</li>
+          <li>Use least privilege for data and tools.</li>
+          <li>Evaluate behavior continuously; do not rely on model benchmarks alone.</li>
+          <li>Keep model choice replaceable through abstraction and routing.</li>
+          <li>Measure business outcome, quality, latency, safety and cost together.</li>
+        </ul>
+
+        <h3>13 &middot; AI Maturity &amp; Readiness</h3>
+        <p>The objective is repeatable organizational capability — not isolated AI demos.</p>
+          <table>
+            <thead><tr><th>Stage</th><th>Capability</th><th>Typical state</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>Traditional</td><td>Little / no AI</td></tr>
+              <tr><td>1</td><td>Experimentation</td><td>Pilots, copilots, ad-hoc prompts</td></tr>
+              <tr><td>2</td><td>AI Applications</td><td>Production LLM / RAG apps</td></tr>
+              <tr><td>3</td><td>AI Engineering</td><td>Evals, observability, guardrails</td></tr>
+              <tr><td>4</td><td>Agentic AI</td><td>Tool-using agents in workflows</td></tr>
+              <tr><td>5</td><td>Scaled AI Platform</td><td>Gateway, routing, shared platform, governance</td></tr>
+              <tr><td>6</td><td>Agentic Enterprise</td><td>AI embedded into core business processes</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>AI readiness checklist:</strong></p>
+        <ul>
+          <li><strong>Architecture:</strong> reference patterns and approved building blocks exist.</li>
+          <li><strong>Data:</strong> AI-ready data access, quality and lineage exist.</li>
+          <li><strong>Security:</strong> identity, least privilege and guardrails are standard.</li>
+          <li><strong>Testing:</strong> AI-specific test strategy is part of delivery.</li>
+          <li><strong>Evals:</strong> golden datasets + automated evaluation exist.</li>
+          <li><strong>Observability:</strong> production traces and quality signals are visible.</li>
+          <li><strong>Platform:</strong> gateway, model routing and reusable services exist.</li>
+          <li><strong>Governance:</strong> risk classification, inventory and audit process exist.</li>
+          <li><strong>People:</strong> teams understand when and how to use AI.</li>
+        </ul>
+
+        <p><strong>Who owns what:</strong></p>
+          <table>
+            <thead><tr><th>Role</th><th>Primary responsibility</th></tr></thead>
+            <tbody>
+              <tr><td>Business / Product</td><td>Outcome, workflow and risk acceptance</td></tr>
+              <tr><td>Engineering</td><td>Application, integration and reliability</td></tr>
+              <tr><td>AI / ML</td><td>Models, prompts, RAG, evals and optimization</td></tr>
+              <tr><td>Platform</td><td>Gateway, runtime, observability and FinOps</td></tr>
+              <tr><td>Security</td><td>Identity, data security, threat model, guardrails</td></tr>
+              <tr><td>Risk / Legal</td><td>Policy, regulatory and governance controls</td></tr>
+              <tr><td>Operations</td><td>Monitoring, incident response and continuous improvement</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Use-case playbook:</strong></p>
+          <table>
+            <thead><tr><th>Use case</th><th>Likely architecture</th><th>Critical evaluation</th></tr></thead>
+            <tbody>
+              <tr><td>Enterprise search</td><td>RAG</td><td>Retrieval + groundedness</td></tr>
+              <tr><td>Customer support</td><td>RAG + tools</td><td>Resolution + safety</td></tr>
+              <tr><td>IT operations</td><td>Agent + tools</td><td>Trajectory + authorization</td></tr>
+              <tr><td>Software engineering</td><td>Agent + tools</td><td>Tests + code quality + trajectory</td></tr>
+              <tr><td>Document automation</td><td>Chain + RAG</td><td>Extraction + correctness</td></tr>
+              <tr><td>Research assistant</td><td>Planner + parallel agents</td><td>Evidence + completeness</td></tr>
+              <tr><td>Workflow automation</td><td>Agent + deterministic steps</td><td>Task success + cost</td></tr>
+            </tbody>
+          </table>
+
+        <p><strong>Suggested organizational roadmap:</strong></p>
+        <ul>
+          <li><strong>Phase 1:</strong> common AI principles, approved models, security baseline.</li>
+          <li><strong>Phase 2:</strong> shared AI gateway, RAG patterns, eval framework.</li>
+          <li><strong>Phase 3:</strong> agent harness, observability, testing platform.</li>
+          <li><strong>Phase 4:</strong> production agents + human oversight + governance.</li>
+          <li><strong>Phase 5:</strong> multi-model routing + FinOps + reusable platform.</li>
+          <li><strong>Phase 6:</strong> scale successful AI capabilities across business units.</li>
+        </ul>
+
+        <h2>AI readiness is a system capability</h2>
+        <p>Models are only one component. Production value comes from architecture, data, tools, memory, evaluation, security, and operations working together. The goal is not maximum autonomy — it is reliable, measurable and governed automation.</p>
+        <blockquote><p>Build once. Evaluate continuously. Operate safely. Scale what works.</p></blockquote>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

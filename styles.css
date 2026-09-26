@@ -525,6 +525,10 @@ h1 {
   line-height: 1.65;
 }
 
+.finance-disclaimer {
+  margin-bottom: 2.5rem;
+}
+
 .playbook-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -930,6 +934,13 @@ h1 {
   margin-top: 0;
 }
 
+.note-content h3 {
+  margin: 2rem 0 0.85rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  color: var(--coral);
+}
+
 .note-content p,
 .note-content li {
   font-size: 1rem;
@@ -993,6 +1004,7 @@ h1 {
   padding: 0.65rem 0.75rem;
   border-bottom: 1px solid var(--line);
   text-align: left;
+  overflow-wrap: break-word;
 }
 
 .note-content th {
@@ -1004,6 +1016,28 @@ h1 {
 .note-source {
   font-size: 0.84rem;
   color: var(--muted);
+}
+
+.note-figure {
+  margin: 1.75rem 0 2rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 4px;
+}
+
+.note-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.note-figure figcaption {
+  margin-top: 0.85rem;
+  font: 0.7rem "DM Mono", monospace;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .contact-section {
@@ -1045,6 +1079,36 @@ footer {
 footer p {
   margin: 0;
   color: var(--muted);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ink);
+  color: var(--paper);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 20;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--coral);
 }
 
 .reveal {
