@@ -96,6 +96,16 @@ const financeCards = [
     href: "finance/freedom-investing.html",
   },
   {
+    slug: "why-etfs",
+    type: "Personal finance / ETF strategy",
+    title: "Why ETFs,<br />Not Stocks or Active Funds?",
+    description:
+      "Why I prefer index ETFs for long-term equity exposure, and the trade-offs I consider against stocks and mutual funds.",
+    author: "Dishant Raut",
+    meta: "ETFs / Index investing",
+    href: "finance/why-etfs.html",
+  },
+  {
     slug: "money-lessons",
     type: "Personal finance / Investing",
     title: "Money / Business<br />Lessons",

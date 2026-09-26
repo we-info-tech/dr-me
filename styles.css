@@ -725,6 +725,17 @@ h1 {
   margin: 0 auto;
 }
 
+.wide-note-page main {
+  max-width: 1320px;
+}
+
+.wide-note-page .note-content > h2,
+.wide-note-page .note-content > p,
+.wide-note-page .note-content > ul,
+.wide-note-page .note-source {
+  max-width: 780px;
+}
+
 .strategy-page main {
   max-width: 1320px;
 }
@@ -953,9 +964,28 @@ h1 {
 
 .note-content table {
   width: 100%;
-  margin: 0 0 1.5rem;
+  margin: 0;
   border-collapse: collapse;
   font-size: 0.9rem;
+}
+
+.note-table-scroll {
+  max-width: 100%;
+  margin: 0 0 1.5rem;
+  overflow-x: auto;
+}
+
+.note-table-scroll table {
+  min-width: 720px;
+}
+
+.note-table-scroll-wide table {
+  min-width: 1040px;
+}
+
+.note-table-scroll:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
 }
 
 .note-content th,
@@ -968,6 +998,11 @@ h1 {
 .note-content th {
   font: 0.67rem "DM Mono", monospace;
   text-transform: uppercase;
+  color: var(--muted);
+}
+
+.note-source {
+  font-size: 0.84rem;
   color: var(--muted);
 }
 
