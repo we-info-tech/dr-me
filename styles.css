@@ -303,7 +303,8 @@ h1 {
 .writing-section,
 .playbooks-section,
 .reading-section,
-.finance-section {
+.finance-section,
+.life-section {
   padding: 8rem 5vw;
 }
 
@@ -623,7 +624,8 @@ h1 {
 }
 
 .book-grid,
-.finance-grid {
+.finance-grid,
+.life-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
@@ -632,7 +634,8 @@ h1 {
 }
 
 .book-card,
-.finance-card {
+.finance-card,
+.life-card {
   min-height: 360px;
   padding: 1.5rem;
   background: var(--paper);
@@ -643,7 +646,8 @@ h1 {
 }
 
 .book-card:hover,
-.finance-card:hover {
+.finance-card:hover,
+.life-card:hover {
   background: var(--panel);
 }
 
@@ -652,25 +656,31 @@ h1 {
 .book-footer,
 .finance-number,
 .finance-type,
-.finance-footer {
+.finance-footer,
+.life-number,
+.life-type,
+.life-footer {
   font: 0.67rem/1.55 "DM Mono", monospace;
   text-transform: uppercase;
 }
 
 .book-number,
-.finance-number {
+.finance-number,
+.life-number {
   margin: 0;
   color: var(--muted);
 }
 
 .book-type,
-.finance-type {
+.finance-type,
+.life-type {
   margin-bottom: 0.85rem;
   color: var(--muted);
 }
 
 .book-card h3,
-.finance-card h3 {
+.finance-card h3,
+.life-card h3 {
   margin: 0;
   font-size: clamp(1.4rem, 2.2vw, 1.9rem);
   line-height: 1;
@@ -678,12 +688,14 @@ h1 {
 }
 
 .book-card > a,
-.finance-card > a {
+.finance-card > a,
+.life-card > a {
   display: block;
 }
 
 .book-description,
-.finance-description {
+.finance-description,
+.life-description {
   max-width: 22rem;
   margin: 1.25rem 0 0;
   font-size: 0.85rem;
@@ -692,7 +704,8 @@ h1 {
 }
 
 .book-footer,
-.finance-footer {
+.finance-footer,
+.life-footer {
   border-top: 1px solid var(--line);
   padding-top: 0.85rem;
   display: flex;
@@ -702,12 +715,14 @@ h1 {
 }
 
 .book-footer p,
-.finance-footer p {
+.finance-footer p,
+.life-footer p {
   margin: 0;
 }
 
 .book-footer a,
-.finance-footer a {
+.finance-footer a,
+.life-footer a {
   white-space: nowrap;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid currentColor;
@@ -715,7 +730,8 @@ h1 {
 }
 
 .book-footer a:hover,
-.finance-footer a:hover {
+.finance-footer a:hover,
+.life-footer a:hover {
   opacity: 0.6;
 }
 
@@ -994,6 +1010,16 @@ h1 {
   min-width: 1040px;
 }
 
+.retirement-plan-page .note-table-fit {
+  max-width: 100%;
+  margin: 0 0 1.5rem;
+}
+
+.retirement-plan-page .note-table-fit table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
 .note-table-scroll:focus-visible {
   outline: 2px solid var(--coral);
   outline-offset: 4px;
@@ -1226,7 +1252,8 @@ footer p {
   .writing-section,
   .playbooks-section,
   .reading-section,
-  .finance-section {
+  .finance-section,
+  .life-section {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
@@ -1260,7 +1287,8 @@ footer p {
   .project-grid,
   .playbook-grid,
   .book-grid,
-  .finance-grid {
+  .finance-grid,
+  .life-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1297,7 +1325,8 @@ footer p {
 
   .playbook-card,
   .book-card,
-  .finance-card {
+  .finance-card,
+  .life-card {
     min-height: 300px;
   }
 

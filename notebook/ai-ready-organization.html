@@ -80,8 +80,9 @@
         </figure>
 
         <p><strong>Agentic AI design patterns:</strong></p>
+        <div class="note-table-scroll" role="region" aria-label="Agentic AI design patterns" tabindex="0">
           <table>
-            <thead><tr><th>Pattern</th><th>What it does</th><th>Typical use case</th></tr></thead>
+            <thead><tr><th scope="col">Pattern</th><th scope="col">What it does</th><th scope="col">Typical use case</th></tr></thead>
             <tbody>
               <tr><td>Prompt chaining</td><td>Sequential model steps</td><td>Document processing</td></tr>
               <tr><td>Routing</td><td>Select path/model</td><td>Support triage</td></tr>
@@ -97,6 +98,7 @@
               <tr><td>Event-driven</td><td>React to events</td><td>Ops monitoring</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Choosing the right agent pattern:</strong></p>
         <ul>
@@ -125,8 +127,9 @@
 
         <h3>04 &middot; Agentic AI Memory</h3>
         <p>Memory turns a stateless model call into a stateful system.</p>
+        <div class="note-table-scroll" role="region" aria-label="Agentic AI memory types" tabindex="0">
           <table>
-            <thead><tr><th>Memory</th><th>Purpose</th><th>Example</th></tr></thead>
+            <thead><tr><th scope="col">Memory</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td>Working / context</td><td>Current task state</td><td>Current plan and tool results</td></tr>
               <tr><td>Short-term</td><td>Recent interaction</td><td>Last conversation turns</td></tr>
@@ -136,6 +139,7 @@
               <tr><td>Profile</td><td>Stable user context</td><td>Role, locale, permissions</td></tr>
             </tbody>
           </table>
+        </div>
         <p><strong>Design questions:</strong> what do we remember? For how long? Who can retrieve it? How do we correct or delete it?</p>
         <p><strong>Key risks:</strong> memory poisoning, stale facts, privacy leakage, cross-tenant retrieval.</p>
 
@@ -167,8 +171,9 @@
           <li><strong>Cost / latency:</strong> is it economically viable?</li>
         </ul>
 
+        <div class="note-table-scroll" role="region" aria-label="Offline versus online evaluation" tabindex="0">
           <table>
-            <thead><tr><th>Offline / pre-production</th><th>Online / production</th></tr></thead>
+            <thead><tr><th scope="col">Offline / pre-production</th><th scope="col">Online / production</th></tr></thead>
             <tbody>
               <tr><td>Golden datasets</td><td>Real user traffic / traces</td></tr>
               <tr><td>Regression suites</td><td>Live quality signals</td></tr>
@@ -178,6 +183,7 @@
               <tr><td>Release gates</td><td>Alerts &amp; incident response</td></tr>
             </tbody>
           </table>
+        </div>
         <blockquote><p>Evaluate the system you deploy — not just the underlying model.</p></blockquote>
 
         <p><strong>Observability for agentic systems:</strong></p>
@@ -209,8 +215,9 @@
         </ul>
 
         <p><strong>Judge failure modes:</strong></p>
+        <div class="note-table-scroll" role="region" aria-label="LLM-as-a-judge failure modes" tabindex="0">
           <table>
-            <thead><tr><th>Failure mode</th><th>What can happen</th><th>Mitigation</th></tr></thead>
+            <thead><tr><th scope="col">Failure mode</th><th scope="col">What can happen</th><th scope="col">Mitigation</th></tr></thead>
             <tbody>
               <tr><td>Position bias</td><td>Preference for first/second option</td><td>Randomize order</td></tr>
               <tr><td>Verbosity bias</td><td>Longer answer looks better</td><td>Rubric + length control</td></tr>
@@ -220,11 +227,13 @@
               <tr><td>Low human agreement</td><td>Automated score is misleading</td><td>Human validation sample</td></tr>
             </tbody>
           </table>
+        </div>
 
         <h3>07 &middot; Testing LLM, RAG &amp; Agentic Systems</h3>
         <p>AI testing needs conventional software testing plus AI-specific behavioral testing.</p>
+        <div class="note-table-scroll note-table-scroll-wide" role="region" aria-label="Testing layers across LLM, RAG, and agentic systems" tabindex="0">
           <table>
-            <thead><tr><th>Test layer</th><th>LLM</th><th>RAG</th><th>Agent</th><th>Multi-agent</th></tr></thead>
+            <thead><tr><th scope="col">Test layer</th><th scope="col">LLM</th><th scope="col">RAG</th><th scope="col">Agent</th><th scope="col">Multi-agent</th></tr></thead>
             <tbody>
               <tr><td>Unit</td><td>Prompt / parser</td><td>Retriever / chunker</td><td>Tool wrapper</td><td>Agent component</td></tr>
               <tr><td>Integration</td><td>API / schema</td><td>Retriever + generator</td><td>Agent + tools</td><td>Agent coordination</td></tr>
@@ -234,6 +243,7 @@
               <tr><td>Production</td><td>Quality drift</td><td>Retrieval drift</td><td>Trajectory drift</td><td>System outcomes</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Use case &mdash; Enterprise HR RAG assistant:</strong></p>
         <ul>
@@ -271,8 +281,9 @@
 
         <h3>08 &middot; AI Security &amp; Guardrails</h3>
         <p>Security moves from protecting the model API to controlling what an agent can know and do.</p>
+        <div class="note-table-scroll" role="region" aria-label="AI security and guardrail layers" tabindex="0">
           <table>
-            <thead><tr><th>Layer</th><th>Representative risks</th><th>Controls</th></tr></thead>
+            <thead><tr><th scope="col">Layer</th><th scope="col">Representative risks</th><th scope="col">Controls</th></tr></thead>
             <tbody>
               <tr><td>Input</td><td>Prompt injection, jailbreak</td><td>Input filters, policy checks</td></tr>
               <tr><td>Context</td><td>Data leakage, poisoned content</td><td>ACLs, provenance, isolation</td></tr>
@@ -284,6 +295,7 @@
               <tr><td>Audit</td><td>Missing evidence</td><td>Immutable traces / logs</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Agent permissions &mdash; least privilege:</strong></p>
         <ul>
@@ -313,8 +325,9 @@
 
         <h3>10 &middot; LLM Provider Strategy</h3>
         <p>Compare providers by workload fit, enterprise requirements and economics — not by a single benchmark.</p>
+        <div class="note-table-scroll" role="region" aria-label="LLM provider strategy dimensions" tabindex="0">
           <table>
-            <thead><tr><th>Dimension</th><th>Questions to evaluate</th></tr></thead>
+            <thead><tr><th scope="col">Dimension</th><th scope="col">Questions to evaluate</th></tr></thead>
             <tbody>
               <tr><td>Reasoning</td><td>How well does it solve complex tasks?</td></tr>
               <tr><td>Coding</td><td>How well does it generate / modify / debug code?</td></tr>
@@ -329,6 +342,7 @@
               <tr><td>Ecosystem</td><td>SDKs, agents, observability, integrations?</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Provider landscape to monitor:</strong></p>
         <ul>
@@ -439,8 +453,9 @@
 
         <h3>13 &middot; AI Maturity &amp; Readiness</h3>
         <p>The objective is repeatable organizational capability — not isolated AI demos.</p>
+        <div class="note-table-scroll" role="region" aria-label="AI maturity and readiness stages" tabindex="0">
           <table>
-            <thead><tr><th>Stage</th><th>Capability</th><th>Typical state</th></tr></thead>
+            <thead><tr><th scope="col">Stage</th><th scope="col">Capability</th><th scope="col">Typical state</th></tr></thead>
             <tbody>
               <tr><td>0</td><td>Traditional</td><td>Little / no AI</td></tr>
               <tr><td>1</td><td>Experimentation</td><td>Pilots, copilots, ad-hoc prompts</td></tr>
@@ -451,6 +466,7 @@
               <tr><td>6</td><td>Agentic Enterprise</td><td>AI embedded into core business processes</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>AI readiness checklist:</strong></p>
         <ul>
@@ -466,8 +482,9 @@
         </ul>
 
         <p><strong>Who owns what:</strong></p>
+        <div class="note-table-scroll" role="region" aria-label="AI ownership by role" tabindex="0">
           <table>
-            <thead><tr><th>Role</th><th>Primary responsibility</th></tr></thead>
+            <thead><tr><th scope="col">Role</th><th scope="col">Primary responsibility</th></tr></thead>
             <tbody>
               <tr><td>Business / Product</td><td>Outcome, workflow and risk acceptance</td></tr>
               <tr><td>Engineering</td><td>Application, integration and reliability</td></tr>
@@ -478,10 +495,12 @@
               <tr><td>Operations</td><td>Monitoring, incident response and continuous improvement</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Use-case playbook:</strong></p>
+        <div class="note-table-scroll" role="region" aria-label="AI use-case playbook" tabindex="0">
           <table>
-            <thead><tr><th>Use case</th><th>Likely architecture</th><th>Critical evaluation</th></tr></thead>
+            <thead><tr><th scope="col">Use case</th><th scope="col">Likely architecture</th><th scope="col">Critical evaluation</th></tr></thead>
             <tbody>
               <tr><td>Enterprise search</td><td>RAG</td><td>Retrieval + groundedness</td></tr>
               <tr><td>Customer support</td><td>RAG + tools</td><td>Resolution + safety</td></tr>
@@ -492,6 +511,7 @@
               <tr><td>Workflow automation</td><td>Agent + deterministic steps</td><td>Task success + cost</td></tr>
             </tbody>
           </table>
+        </div>
 
         <p><strong>Suggested organizational roadmap:</strong></p>
         <ul>

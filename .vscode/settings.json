@@ -1,6 +1,10 @@
 {
     "chat.tools.terminal.autoApprove": {
         "git remote": true,
-        "test": true
+        "test": true,
+        "/^node --check script\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     }
 }

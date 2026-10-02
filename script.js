@@ -9,6 +9,13 @@ const categoryLabels = {
 
 const articles = [
   {
+    category: "thinking",
+    date: "Published",
+    status: "Read now",
+    title: "Life after retirement: a plan for work optionality",
+    link: "notebook/life-after-retirement.html",
+  },
+  {
     category: "craft",
     date: "Published",
     status: "Read now",
@@ -87,6 +94,16 @@ const readingCards = [
 
 const financeCards = [
   {
+    slug: "retirement-by-design",
+    type: "Personal finance / Retirement planning",
+    title: "Retirement<br />by Design",
+    description:
+      "A personal plan to trade work hours for greater choice, with a ₹20 crore enough number and a much larger lifetime ambition.",
+    author: "Dishant Raut",
+    meta: "Retirement / Life design",
+    href: "finance/retirement-by-design.html",
+  },
+  {
     slug: "portfolio-blocks",
     type: "Personal finance / Portfolio construction",
     title: "A Portfolio,<br />Built in Blocks",
@@ -158,11 +175,45 @@ const financeCards = [
   },
 ];
 
+const lifeCards = [
+  {
+    slug: "three-decisions-that-shape-a-life",
+    type: "Life / Life design",
+    title: "Three Decisions<br />That Shape a Life",
+    description:
+      "How the choices of where to live, what to do, and whom to build a life with shape a person's long-term trajectory.",
+    author: "Dishant Raut",
+    meta: "Place / Work / Partnership",
+    href: "life/three-decisions-that-shape-a-life.html",
+  },
+  {
+    slug: "why-freedom",
+    type: "Life / Life design",
+    title: "Why Freedom?<br />What Is It?",
+    description:
+      "Why financial freedom matters to me: more choice over my time, independence from the herd, less scarcity-driven panic, and greater mobility.",
+    author: "Dishant Raut",
+    meta: "Freedom / Life design",
+    href: "life/why-freedom.html",
+  },
+  {
+    slug: "why-change-nationality",
+    type: "Life / Migration",
+    title: "Why People Change<br />Nationality",
+    description:
+      "A framework for understanding why people leave their home country \u2014 security, opportunity, or tax and control \u2014 and how to choose where to go.",
+    author: "Dishant Raut",
+    meta: "Framework / Migration",
+    href: "life/why-change-nationality.html",
+  },
+];
+
 const noteShellConfig = {
   reading: { sectionLabel: "Reading", sectionHref: "../index.html#reading", contactHref: "../index.html#contact" },
   finance: { sectionLabel: "Finance", sectionHref: "../index.html#finance", contactHref: "../index.html#contact" },
   notebook: { sectionLabel: "Writing", sectionHref: "../index.html#writing", contactHref: "../index.html#contact" },
   playbooks: { sectionLabel: "Playbooks", sectionHref: "../index.html#playbooks", contactHref: "../index.html#contact" },
+  life: { sectionLabel: "Life", sectionHref: "../index.html#life", contactHref: "../index.html#contact" },
 };
 
 const articleList = document.querySelector("#article-list");
@@ -228,6 +279,7 @@ function renderCardGrid(selector, cards, cardType) {
 function renderHomeCollections() {
   renderCardGrid("#reading-grid", readingCards, "book");
   renderCardGrid("#finance-grid", financeCards, "finance");
+  renderCardGrid("#life-grid", lifeCards, "life");
 }
 
 function injectNotePageShell() {

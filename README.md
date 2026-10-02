@@ -9,9 +9,10 @@ This project is a small static portfolio and writing site built with plain HTML,
 - `script.js` — content data and rendering for writing, reading, and finance cards; note-page shell injection; article filtering, mobile navigation, and shared year rendering
 - `books/` — reading notes pages
 - `finance/` — finance notes pages
+- `life/` — life design and migration notes
 - `notebook/` — notebook / thinking pages
 
-The current content inventory includes three reading notes, two finance notes, and one published notebook article. Additional writing entries are intentionally marked as coming soon in `script.js`.
+The current content inventory includes three reading notes, eight finance notes, three life notes, seven notebook pages, and five playbooks. Additional writing entries are intentionally marked as coming soon in `script.js`.
 
 ## Local preview
 
