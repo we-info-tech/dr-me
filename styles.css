@@ -985,6 +985,97 @@ h1 {
   margin: 0;
 }
 
+.idea-flow {
+  margin: 2rem 0 2.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.note-content .idea-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.idea-flow-steps li {
+  position: relative;
+  display: flex;
+  min-height: 8.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.8rem 0.55rem 0.6rem 0;
+  border-top: 2px solid var(--coral);
+}
+
+.idea-flow-steps li:not(:last-child)::after {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.7rem;
+  color: var(--coral);
+  content: "\2192";
+  font-size: 1rem;
+}
+
+.idea-flow-kicker {
+  color: var(--muted);
+  font: 0.62rem "DM Mono", monospace;
+  text-transform: uppercase;
+}
+
+.idea-flow-steps strong {
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.idea-flow-steps li > span:last-child {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.idea-flow-feedback {
+  margin: 0.9rem 0 0.5rem;
+  color: var(--coral);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.idea-flow-feedback span {
+  margin-right: 0.35rem;
+  font-size: 1rem;
+}
+
+.idea-flow figcaption {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .note-content .idea-flow-steps {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .idea-flow-steps li {
+    min-height: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  .idea-flow-steps li:not(:last-child)::after {
+    top: auto;
+    right: 0.4rem;
+    bottom: -0.8rem;
+    content: "\2193";
+  }
+}
+
 .note-content strong {
   font-weight: 700;
 }
@@ -1056,6 +1147,10 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.note-figure .financial-freedom-levels {
+  min-width: 860px;
 }
 
 .note-figure figcaption {

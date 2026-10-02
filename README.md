@@ -4,15 +4,16 @@ This project is a small static portfolio and writing site built with plain HTML,
 
 ## Structure
 
+- `.gitignore` — excludes local VS Code settings and the root `todo` file
 - `index.html` — homepage with perspective, work, writing, playbooks, reading, finance, and contact sections
 - `styles.css` — all shared styling and responsive behavior
-- `script.js` — content data and rendering for writing, reading, and finance cards; note-page shell injection; article filtering, mobile navigation, and shared year rendering
+- `script.js` — content data and rendering for writing, reading, finance, and life cards; note-page shell injection; article filtering, mobile navigation, and shared year rendering
 - `books/` — reading notes pages
 - `finance/` — finance notes pages
 - `life/` — life design and migration notes
 - `notebook/` — notebook / thinking pages
 
-The current content inventory includes three reading notes, eight finance notes, three life notes, seven notebook pages, and five playbooks. Additional writing entries are intentionally marked as coming soon in `script.js`.
+The current content inventory includes three reading notes, nine finance notes, four life notes, seven notebook pages, and five playbooks. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
 
 ## Local preview
 
@@ -28,7 +29,7 @@ Then visit: http://localhost:8000
 
 - Keep the visual system in `styles.css` and avoid scattering layout changes across files.
 - Update the relevant content arrays in `script.js` when adding or reordering writing articles, reading cards, or finance cards.
-- Keep note pages marked with `data-page="note"` and set `data-back-section` to `reading`, `finance`, or `notebook`; `script.js` uses these values to inject the shared header and footer.
+- Keep note pages marked with `data-page="note"` and set `data-back-section` to the containing section: `reading`, `finance`, `notebook`, `playbooks`, or `life`; `script.js` uses these values to inject the shared header and footer.
 - Use semantic markup (`section`, `article`, `nav`, etc.) to preserve accessibility.
 - Add descriptive text to new links and use real page destinations when possible.
 

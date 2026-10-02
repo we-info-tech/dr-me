@@ -94,6 +94,16 @@ const readingCards = [
 
 const financeCards = [
   {
+    slug: "steps-toward-financial-freedom",
+    type: "Personal finance / Financial freedom",
+    title: "Steps Toward<br />Financial Freedom",
+    description:
+      "A practical framework for strengthening financial foundations and understanding seven levels of financial freedom.",
+    author: "Dishant Raut",
+    meta: "Financial foundations / Freedom",
+    href: "finance/steps-toward-financial-freedom.html",
+  },
+  {
     slug: "retirement-by-design",
     type: "Personal finance / Retirement planning",
     title: "Retirement<br />by Design",
@@ -176,6 +186,16 @@ const financeCards = [
 ];
 
 const lifeCards = [
+  {
+    slug: "uniqueness-is-a-combination",
+    type: "Life / Personal growth",
+    title: "Uniqueness Is<br />a Combination",
+    description:
+      "Why originality grows from shared foundations, and how our changing experiences and needs shape a distinctive mix of ideas and skills.",
+    author: "Dishant Raut",
+    meta: "Originality / Synthesis",
+    href: "life/uniqueness-is-a-combination.html",
+  },
   {
     slug: "three-decisions-that-shape-a-life",
     type: "Life / Life design",
