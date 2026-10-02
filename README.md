@@ -13,7 +13,7 @@ This project is a small static portfolio and writing site built with plain HTML,
 - `life/` — life design and migration notes
 - `notebook/` — notebook / thinking pages
 
-The current content inventory includes three reading notes, nine finance notes, five life notes (including a daily-schedule plan for life after 40, linked to Retirement by Design), seven notebook pages, and five playbooks. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
+The current content inventory includes four reading notes, including a combined note on both editions of *Nudge*, nine finance notes, five life notes (including a daily-schedule plan for life after 40, linked to Retirement by Design), seven notebook pages, and five playbooks. The retirement plan also covers systems, delegation, deep work, and how reclaimed time may be used. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
 
 ## Local preview
 

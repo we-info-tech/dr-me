@@ -90,6 +90,16 @@ const readingCards = [
     meta: "FIRE / Life energy",
     href: "books/your-money-or-your-life.html",
   },
+  {
+    slug: "nudge",
+    type: "Behavioral economics / Decision design",
+    title: "Nudge",
+    description:
+      "Richard H. Thaler and Cass R. Sunstein's guide to choice architecture, making better decisions easier, and preserving freedom of choice.",
+    author: "Thaler & Sunstein",
+    meta: "Choice architecture / Sludge",
+    href: "books/nudge.html",
+  },
 ];
 
 const financeCards = [
