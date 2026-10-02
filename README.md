@@ -6,14 +6,14 @@ This project is a small static portfolio and writing site built with plain HTML,
 
 - `.gitignore` — excludes local VS Code settings and the root `todo` file
 - `index.html` — homepage with perspective, work, writing, playbooks, reading, finance, and contact sections
-- `styles.css` — all shared styling and responsive behavior
+- `styles.css` — all shared styling and responsive behavior, including underlined coral links inside note text
 - `script.js` — content data and rendering for writing, reading, finance, and life cards; note-page shell injection; article filtering, mobile navigation, and shared year rendering
 - `books/` — reading notes pages
 - `finance/` — finance notes pages
 - `life/` — life design and migration notes
 - `notebook/` — notebook / thinking pages
 
-The current content inventory includes three reading notes, nine finance notes, four life notes, seven notebook pages, and five playbooks. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
+The current content inventory includes three reading notes, nine finance notes, five life notes (including a daily-schedule plan for life after 40, linked to Retirement by Design), seven notebook pages, and five playbooks. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
 
 ## Local preview
 

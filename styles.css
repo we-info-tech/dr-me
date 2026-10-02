@@ -52,6 +52,19 @@ a {
   text-decoration: none;
 }
 
+.note-content p a,
+.note-content li a {
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.note-content p a:hover,
+.note-content li a:hover {
+  background: var(--acid);
+}
+
 :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;

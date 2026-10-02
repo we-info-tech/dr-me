@@ -226,6 +226,16 @@ const lifeCards = [
     meta: "Framework / Migration",
     href: "life/why-change-nationality.html",
   },
+  {
+    slug: "my-life-after-freedom",
+    type: "Life / Life design",
+    title: "How I Plan to Live<br />After 40, in Freedom",
+    description:
+      "A personal plan for a typical day after 40: mornings for family and friends, afternoons for calls and deep work, evenings for health and family.",
+    author: "Dishant Raut",
+    meta: "Freedom / Daily design",
+    href: "life/my-life-after-freedom.html",
+  },
 ];
 
 const noteShellConfig = {
