@@ -1,4 +1,5 @@
 {
+    "chat.editor.localAgent.enabled": true,
     "chat.tools.terminal.autoApprove": {
         "git remote": true,
         "test": true,
