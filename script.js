@@ -52,6 +52,59 @@ const articles = [
   },
 ];
 
+const playbookCards = [
+  {
+    variant: "",
+    type: "Digital playbook",
+    title: "RAG Systems<br />That Answer",
+    description:
+      "A practical method for designing retrieval, chunking, evaluation, and citations so your AI answers from the right context.",
+    audience: "For builders &amp; teams",
+    meta: "RAG / Evaluation",
+    href: "playbooks/rag-systems-that-answer.html",
+  },
+  {
+    variant: "dark",
+    type: "Digital playbook",
+    title: "Cost-Optimized<br />AI Systems",
+    description:
+      "A practical guide to building useful AI workflows with the right model, retrieval, caching, evaluation, and cost controls.",
+    audience: "For product &amp; tech teams",
+    meta: "AI / RAG / FinOps",
+    href: "playbooks/cost-optimized-ai-systems.html",
+  },
+  {
+    variant: "coral",
+    type: "Digital playbook",
+    title: "Production AI<br />Without Surprises",
+    description:
+      "A working playbook for observability, guardrails, prompt versioning, fallback paths, and safe AI delivery.",
+    audience: "For engineering leaders",
+    meta: "LLMOps / Guardrails",
+    href: "playbooks/production-ai-without-surprises.html",
+  },
+  {
+    variant: "blue",
+    type: "Product playbook",
+    title: "AccessOS",
+    description:
+      "A complete access-control framework for startups that need to scale their teams, permissions, and operations without losing control.",
+    audience: "For scaling startups",
+    meta: "Access / Control / Scale",
+    href: "playbooks/accessos.html",
+  },
+  {
+    variant: "paper",
+    type: "Career playbook",
+    title: "CTC: Campus<br />to Career",
+    description:
+      "A practical guide for new-age college students who want to turn their learning into a confident first step into the workforce.",
+    audience: "For college students",
+    meta: "Skills / Career / Work",
+    href: "playbooks/ctc-campus-to-career.html",
+  },
+];
+
 const readingCards = [
   {
     type: "Finance / Value investing",
@@ -232,6 +285,7 @@ const noteShellConfig = {
 };
 
 injectNotePageShell();
+addHeadingIdsAndToc();
 
 const articleList = document.querySelector("#article-list");
 const filters = document.querySelectorAll(".filter");
@@ -293,7 +347,34 @@ function renderCardGrid(selector, cards, cardType) {
     .join("");
 }
 
+function renderPlaybooks() {
+  const container = document.querySelector("#playbook-grid");
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = playbookCards
+    .map(
+      (card, index) => `
+        <article class="playbook-card${card.variant ? ` playbook-card--${card.variant}` : ""}">
+          <p class="playbook-number">${String(index + 1).padStart(2, "0")}</p>
+          <div>
+            <p class="playbook-type">${card.type}</p>
+            <h3>${card.title}</h3>
+            <p class="playbook-description">${card.description}</p>
+          </div>
+          <div class="playbook-footer">
+            <p>${card.audience}<br />${card.meta}</p>
+            <a href="${card.href}">Coming soon <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+}
+
 function renderHomeCollections() {
+  renderPlaybooks();
   renderCardGrid("#reading-grid", readingCards, "book");
   renderCardGrid("#finance-grid", financeCards, "finance");
   renderCardGrid("#life-grid", lifeCards, "life");
@@ -340,6 +421,66 @@ function injectNotePageShell() {
   body.insertBefore(header, body.firstChild);
   body.appendChild(footer);
   body.appendChild(topLink);
+}
+
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function addHeadingIdsAndToc() {
+  const content = document.querySelector('body[data-page="note"] .note-content');
+  if (!content) {
+    return;
+  }
+
+  const headings = Array.from(content.querySelectorAll("h2, h3"));
+  const used = new Set();
+  headings.forEach((heading) => {
+    if (!heading.id) {
+      const base = slugify(heading.textContent) || "section";
+      let id = base;
+      for (let n = 2; used.has(id) || document.getElementById(id); n += 1) {
+        id = `${base}-${n}`;
+      }
+      heading.id = id;
+    }
+    used.add(heading.id);
+  });
+
+  const sections = [];
+  headings.forEach((heading) => {
+    if (heading.tagName === "H2") {
+      sections.push({ heading, children: [] });
+    } else if (sections.length) {
+      sections[sections.length - 1].children.push(heading);
+    }
+  });
+
+  if (sections.length < 4) {
+    return;
+  }
+
+  const link = (heading) => `<a href="#${heading.id}">${heading.innerHTML}</a>`;
+  const toc = document.createElement("nav");
+  toc.className = "note-toc";
+  toc.setAttribute("aria-label", "On this page");
+  toc.innerHTML = `
+    <p class="note-toc-title">On this page</p>
+    <ol>
+      ${sections
+        .map(
+          ({ heading, children }) => `<li>${link(heading)}${
+            children.length ? `<ol>${children.map((child) => `<li>${link(child)}</li>`).join("")}</ol>` : ""
+          }</li>`,
+        )
+        .join("")}
+    </ol>
+  `;
+  content.insertBefore(toc, content.firstChild);
 }
 
 function setMenuState(isOpen) {
