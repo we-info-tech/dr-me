@@ -10,49 +10,42 @@ const categoryLabels = {
 const articles = [
   {
     category: "thinking",
-    date: "Published",
     status: "Read now",
-    title: "Life after retirement: a plan for work optionality",
+    title: "After Retirement: A Life Where Work Is Optional",
     link: "notebook/life-after-retirement.html",
   },
   {
     category: "craft",
-    date: "Published",
     status: "Read now",
     title: "Software engineering is a craft skill, not just a technical one",
     link: "notebook/software-engineering-is-a-craft.html",
   },
   {
     category: "thinking",
-    date: "Published",
     status: "Read now",
     title: "Decision-making frameworks: matching the process to the problem",
     link: "notebook/decision-making-frameworks.html",
   },
   {
     category: "thinking",
-    date: "Published",
     status: "Read now",
     title: "Identifying high-performing teams: the metrics that actually signal it",
     link: "notebook/identifying-high-performing-teams.html",
   },
   {
     category: "technology",
-    date: "Published",
     status: "Read now",
     title: "Coding is dead? AI missed the funeral",
     link: "notebook/coding-is-dead-ai-missed-the-funeral.html",
   },
   {
     category: "ai",
-    date: "Published",
     status: "Read now",
     title: "AI-Ready Organization: an enterprise AI readiness framework",
     link: "notebook/ai-ready-organization.html",
   },
   {
     category: "engineering-management",
-    date: "Published",
     status: "Read now",
     title: "The Engineering Judgement Framework: from execution to technical authority",
     link: "notebook/engineering-judgement-framework.html",
@@ -61,7 +54,6 @@ const articles = [
 
 const readingCards = [
   {
-    slug: "the-intelligent-investor",
     type: "Finance / Value investing",
     title: "The Intelligent<br />Investor",
     description:
@@ -71,7 +63,6 @@ const readingCards = [
     href: "books/the-intelligent-investor.html",
   },
   {
-    slug: "simple-wealth-inevitable-wealth",
     type: "Finance / Wealth building",
     title: "Simple Wealth,<br />Inevitable Wealth",
     description:
@@ -81,7 +72,6 @@ const readingCards = [
     href: "books/simple-wealth-inevitable-wealth.html",
   },
   {
-    slug: "your-money-or-your-life",
     type: "Finance / Life design",
     title: "Your Money<br />or Your Life",
     description:
@@ -91,7 +81,6 @@ const readingCards = [
     href: "books/your-money-or-your-life.html",
   },
   {
-    slug: "nudge",
     type: "Behavioral economics / Decision design",
     title: "Nudge",
     description:
@@ -104,7 +93,6 @@ const readingCards = [
 
 const financeCards = [
   {
-    slug: "steps-toward-financial-freedom",
     type: "Personal finance / Financial freedom",
     title: "Steps Toward<br />Financial Freedom",
     description:
@@ -114,7 +102,6 @@ const financeCards = [
     href: "finance/steps-toward-financial-freedom.html",
   },
   {
-    slug: "retirement-by-design",
     type: "Personal finance / Retirement planning",
     title: "Retirement<br />by Design",
     description:
@@ -124,7 +111,6 @@ const financeCards = [
     href: "finance/retirement-by-design.html",
   },
   {
-    slug: "portfolio-blocks",
     type: "Personal finance / Portfolio construction",
     title: "A Portfolio,<br />Built in Blocks",
     description:
@@ -134,7 +120,6 @@ const financeCards = [
     href: "finance/portfolio-blocks.html",
   },
   {
-    slug: "freedom-investing",
     type: "Personal finance / Investing philosophy",
     title: "Freedom Investing<br />vs. Active Investing",
     description:
@@ -144,7 +129,6 @@ const financeCards = [
     href: "finance/freedom-investing.html",
   },
   {
-    slug: "why-etfs",
     type: "Personal finance / ETF strategy",
     title: "Why ETFs,<br />Not Stocks or Active Funds?",
     description:
@@ -154,7 +138,6 @@ const financeCards = [
     href: "finance/why-etfs.html",
   },
   {
-    slug: "insurance-wealth-protection",
     type: "Personal finance / Insurance",
     title: "Seven Covers,<br />One Safety Net",
     description:
@@ -164,7 +147,6 @@ const financeCards = [
     href: "finance/insurance-wealth-protection.html",
   },
   {
-    slug: "seven-portfolio-reviews",
     type: "Personal finance / Portfolio management",
     title: "Why I Review My Portfolio<br />Seven Times a Year",
     description:
@@ -174,7 +156,6 @@ const financeCards = [
     href: "finance/seven-portfolio-reviews.html",
   },
   {
-    slug: "money-lessons",
     type: "Personal finance / Investing",
     title: "Money / Business<br />Lessons",
     description:
@@ -184,7 +165,6 @@ const financeCards = [
     href: "finance/money-lessons.html",
   },
   {
-    slug: "wrappers-capitalism-real-innovation",
     type: "Business / Innovation",
     title: "Wrappers, Capitalism<br />& Real Innovation",
     description:
@@ -197,7 +177,6 @@ const financeCards = [
 
 const lifeCards = [
   {
-    slug: "uniqueness-is-a-combination",
     type: "Life / Personal growth",
     title: "Uniqueness Is<br />a Combination",
     description:
@@ -207,7 +186,6 @@ const lifeCards = [
     href: "life/uniqueness-is-a-combination.html",
   },
   {
-    slug: "three-decisions-that-shape-a-life",
     type: "Life / Life design",
     title: "Three Decisions<br />That Shape a Life",
     description:
@@ -217,7 +195,6 @@ const lifeCards = [
     href: "life/three-decisions-that-shape-a-life.html",
   },
   {
-    slug: "why-freedom",
     type: "Life / Life design",
     title: "Why Freedom?<br />What Is It?",
     description:
@@ -227,7 +204,6 @@ const lifeCards = [
     href: "life/why-freedom.html",
   },
   {
-    slug: "why-change-nationality",
     type: "Life / Migration",
     title: "Why People Change<br />Nationality",
     description:
@@ -237,7 +213,6 @@ const lifeCards = [
     href: "life/why-change-nationality.html",
   },
   {
-    slug: "my-life-after-freedom",
     type: "Life / Life design",
     title: "How I Plan to Live<br />After 40, in Freedom",
     description:
@@ -251,7 +226,7 @@ const lifeCards = [
 const noteShellConfig = {
   reading: { sectionLabel: "Reading", sectionHref: "../index.html#reading", contactHref: "../index.html#contact" },
   finance: { sectionLabel: "Finance", sectionHref: "../index.html#finance", contactHref: "../index.html#contact" },
-  notebook: { sectionLabel: "Writing", sectionHref: "../index.html#writing", contactHref: "../index.html#contact" },
+  notebook: { sectionLabel: "Notebook", sectionHref: "../index.html#writing", contactHref: "../index.html#contact" },
   playbooks: { sectionLabel: "Playbooks", sectionHref: "../index.html#playbooks", contactHref: "../index.html#contact" },
   life: { sectionLabel: "Life", sectionHref: "../index.html#life", contactHref: "../index.html#contact" },
 };
@@ -274,18 +249,13 @@ function renderArticles(category) {
   articleList.innerHTML = visibleArticles
     .map((article) => {
       const label = categoryLabels[article.category] || article.category;
-      const statusText = article.status || article.date;
       const content = `
-        <p class="article-meta">${label}<br>${statusText}</p>
+        <p class="article-meta">${label}<br>${article.status}</p>
         <h3>${article.title}</h3>
-        <span class="article-arrow" aria-hidden="true">${article.link ? "↗" : "•"}</span>
+        <span class="article-arrow" aria-hidden="true">↗</span>
       `;
 
-      if (article.link) {
-        return `<a class="article" href="${article.link}" aria-label="Read ${article.title}">${content}</a>`;
-      }
-
-      return `<article class="article is-disabled" aria-label="${article.title}" aria-disabled="true">${content}</article>`;
+      return `<a class="article" href="${article.link}" aria-label="Read ${article.title}">${content}</a>`;
     })
     .join("");
 }
@@ -298,9 +268,9 @@ function renderCardGrid(selector, cards, cardType) {
 
   container.innerHTML = cards
     .map(
-      (card) => `
+      (card, index) => `
         <article class="${cardType}-card">
-          <p class="${cardType}-number">${String(cards.indexOf(card) + 1).padStart(2, "0")}</p>
+          <p class="${cardType}-number">${String(index + 1).padStart(2, "0")}</p>
           <a href="${card.href}">
             <p class="${cardType}-type">${card.type}</p>
             <h3>${card.title}</h3>

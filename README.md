@@ -14,14 +14,16 @@ This project is a small static portfolio and writing site built with plain HTML,
 - `notebook/` — notebook / thinking pages
 - `docs/` — maintainer documents; `site-review.md` lists review findings ordered from simple to hard fixes
 
+Simple review fixes (items 1–10 in `docs/site-review.md`) are applied: the homepage nav now lists About before Work and calls the section "Notebook"; the retirement card uses the note's page title; unused `slug`/`date` card data, the `is-disabled` article branch and its CSS were removed; `.global-status` is declared once; and `index.html` escapes `&` and adds `rel="noopener noreferrer"` to the contact link. `AGENTS.md` now covers the `life/` folder and points to the Node preview server below instead of Python.
+
 The current content inventory includes four reading notes, including a combined note on both editions of *Nudge*, nine finance notes, five life notes (including a daily-schedule plan for life after 40, linked to Retirement by Design), seven notebook pages, and five playbooks. The retirement plan also covers systems, delegation, deep work, and how reclaimed time may be used. The financial-freedom note pairs a foundations funnel with an illustrated seven-level framework; the originality note includes a responsive diagram of how shared inputs become distinct ideas. Additional writing entries are intentionally marked as coming soon in `script.js`.
 
 ## Local preview
 
-Open `index.html` in a browser, or serve the folder with a simple static server:
+Open `index.html` in a browser, or serve the folder with a small Node static server (no packages):
 
 ```bash
-python -m http.server 8000
+node -e "const h=require('http'),f=require('fs'),p=require('path'),t={'.html':'text/html','.css':'text/css','.js':'text/javascript'};h.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';const a=p.join(process.cwd(),u);f.readFile(a,(e,d)=>{if(e){r.statusCode=404;return r.end('Not found')}r.setHeader('Content-Type',t[p.extname(a)]||'application/octet-stream');r.end(d)})}).listen(8000)"
 ```
 
 Then visit: http://localhost:8000

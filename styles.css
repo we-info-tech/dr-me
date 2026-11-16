@@ -507,11 +507,6 @@ h1 {
   background: var(--panel);
 }
 
-.article.is-disabled {
-  opacity: 0.75;
-  cursor: default;
-}
-
 .article-meta {
   font: 0.67rem/1.6 "DM Mono", monospace;
   color: var(--muted);
@@ -817,8 +812,7 @@ h1 {
 
 .strategy-kicker,
 .strategy-number,
-.strategy-role,
-.global-status {
+.strategy-role {
   font: 0.68rem/1.5 "DM Mono", monospace;
   text-transform: uppercase;
 }
@@ -907,6 +901,8 @@ h1 {
   display: inline-block;
   margin: 1rem 0 0;
   padding: 0.3rem 0.55rem;
+  font: 0.68rem/1.5 "DM Mono", monospace;
+  text-transform: uppercase;
   color: var(--ink);
   background: var(--acid);
 }

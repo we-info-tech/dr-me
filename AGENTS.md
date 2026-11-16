@@ -3,8 +3,8 @@
 - Read [README.md](README.md) for the site structure, local preview command, and content-editing conventions; keep this file focused on agent-specific reminders.
 - This is a static HTML/CSS/JavaScript site with no build step or automated test suite. Do not introduce a framework or package tooling for a small content or styling change.
 - Keep shared presentation in `styles.css` and shared rendering, navigation, and page-shell behavior in `script.js`. Homepage collection entries are data-driven there; confirm each new link points to a real page.
-- Note pages in `books/`, `finance/`, `notebook/`, and `playbooks/` use the shared shell injected by `script.js`. Preserve `data-page="note"`, the correct `data-back-section`, and relative paths when adding or editing one.
-- After changes, preview the affected page and homepage with `python -m http.server 8000`; check navigation, links, and responsive behavior when shared CSS or JavaScript changes.
+- Note pages in `books/`, `finance/`, `life/`, `notebook/`, and `playbooks/` use the shared shell injected by `script.js`. Preserve `data-page="note"`, the correct `data-back-section`, and relative paths when adding or editing one.
+- After changes, preview the affected page and homepage with the Node static server from [README.md](README.md); check navigation, links, and responsive behavior when shared CSS or JavaScript changes.
 
 # Rules
 - ignore todo file as if it does not exists
@@ -17,7 +17,7 @@
 
 # Note page formatting spec
 
-All pages under `books/`, `finance/`, `notebook/`, and `playbooks/` share one shell and markup pattern. Match an existing page in the same folder before writing a new one.
+All pages under `books/`, `finance/`, `life/`, `notebook/`, and `playbooks/` share one shell and markup pattern. Match an existing page in the same folder before writing a new one.
 
 ## `<head>`
 - Same `meta charset`, `viewport`, and Google Fonts preconnect/stylesheet block as existing pages (`DM+Mono`, `Instrument+Serif`, `Manrope`).
@@ -25,15 +25,15 @@ All pages under `books/`, `finance/`, `notebook/`, and `playbooks/` share one sh
 - `link rel="stylesheet" href="../styles.css"`.
 - `<title>` pattern depends on folder:
   - `books/` and `finance/`: `"<Title> — Notes | Dishant Raut"`
-  - `notebook/` and `playbooks/`: `"<Title> | Dishant Raut"` (no "— Notes")
+  - `notebook/`, `life/`, and `playbooks/`: `"<Title> | Dishant Raut"` (no "— Notes")
 
 ## `<body>`
 - `class="note-page"`, plus an optional extra modifier class only when the page needs a distinct layout already defined in `styles.css` (e.g. `wide-note-page`, `strategy-page`, `retirement-plan-page`). Don't invent a new modifier class without a matching CSS rule.
 - `data-page="note"` always.
-- `data-back-section` must equal the containing folder name: `reading` for `books/`, `finance`, `notebook`, or `playbooks`.
+- `data-back-section` must equal the containing folder name (`finance`, `life`, `notebook`, or `playbooks`), except `reading` for `books/`.
 
 ## `<main>` structure (in order)
-1. `<a class="note-back" href="../index.html#<section>">&larr; Back to <section label></a>` — section label matches the homepage section text (e.g. "reading shelf", "personal finance", "playbooks").
+1. `<a class="note-back" href="../index.html#<section>">&larr; Back to <section label></a>` — section label matches the homepage section text (e.g. "reading shelf", "personal finance", "life", "playbooks").
 2. `<p class="note-meta">` — short tags separated by `&middot;` (e.g. author/source &middot; topic &middot; theme).
 3. `<h1>` — title text, optionally wrapping a trailing clause in `<em>`.
 4. `<div class="note-content">` wrapping the body:
