@@ -8,6 +8,15 @@
       content="The portfolio and writing of Dishant Raut."
     />
     <title>Dishant Raut | Portfolio, Playbooks &amp; Writing</title>
+    <meta name="theme-color" content="#f5f2ea" />
+    <link rel="canonical" href="https://dishantraut.me/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231d2a24'/%3E%3Ctext x='32' y='42' font-size='28' font-weight='700' text-anchor='middle' fill='%23f5f2ea' font-family='sans-serif'%3EDR%3C/text%3E%3C/svg%3E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dishant Raut | Portfolio, Playbooks &amp; Writing" />
+    <meta property="og:description" content="The portfolio and writing of Dishant Raut." />
+    <meta property="og:url" content="https://dishantraut.me/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,22 +86,19 @@
         </div>
         <div class="project-grid">
           <article class="project project--wide reveal">
-            <!-- TODO : Fix href and aria-label -->
-            <a href="" aria-label="Discuss a backend and architecture project">
+            <a href="#contact" aria-label="Discuss a backend and architecture project">
               <div class="project-visual visual-one"><span>01 / SYS-ARCH</span><div class="window-lines"></div><strong>Systems<br />that endure</strong></div>
               <div class="project-meta"><h3>Backend &amp; architecture</h3><p>APIs / Data / Infrastructure</p></div>
             </a>
           </article>
           <article class="project reveal">
-            <!-- TODO : Fix href and aria-label -->
-            <a href="" aria-label="Explore cost-optimized AI solutions">
+            <a href="#contact" aria-label="Discuss cost-optimized AI solutions">
               <div class="project-visual visual-two"><span>02 / AI-EFFICIENCY</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><strong>AI that earns<br />its runtime</strong></div>
               <div class="project-meta"><h3>Cost-optimized AI solutions</h3><p>RAG / Routing / Caching</p></div>
             </a>
           </article>
           <article class="project reveal">
-            <!-- TODO : Fix href and aria-label -->
-            <a href="" aria-label="Explore secure delivery">
+            <a href="#contact" aria-label="Discuss secure delivery">
               <div class="project-visual visual-three"><span>03 / SHIP-SEC</span><div class="tile-grid"></div><strong>Cloud<br />with care</strong></div>
               <div class="project-meta"><h3>Secure delivery</h3><p>Cloud / DevOps / Security</p></div>
             </a>
@@ -201,14 +207,14 @@
           <h2>Notes on making better <em>things.</em></h2>
         </div>
         <div class="writing-controls" aria-label="Filter articles">
-          <button class="filter is-active" type="button" data-filter="all">All notes</button>
-          <button class="filter" type="button" data-filter="craft">Craft</button>
-          <button class="filter" type="button" data-filter="thinking">Thinking</button>
-          <button class="filter" type="button" data-filter="technology">Technology</button>
-          <button class="filter" type="button" data-filter="ai">Applied AI</button>
-          <button class="filter" type="button" data-filter="engineering-management">Engineering management</button>
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All notes</button>
+          <button class="filter" type="button" data-filter="craft" aria-pressed="false">Craft</button>
+          <button class="filter" type="button" data-filter="thinking" aria-pressed="false">Thinking</button>
+          <button class="filter" type="button" data-filter="technology" aria-pressed="false">Technology</button>
+          <button class="filter" type="button" data-filter="ai" aria-pressed="false">Applied AI</button>
+          <button class="filter" type="button" data-filter="engineering-management" aria-pressed="false">Engineering management</button>
         </div>
-        <div class="article-list" id="article-list"></div>
+        <div class="article-list" id="article-list" aria-live="polite"></div>
       </section>
 
       <section class="life-section" id="life">

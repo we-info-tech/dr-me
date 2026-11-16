@@ -246,6 +246,11 @@ function renderArticles(category) {
       ? articles
       : articles.filter((article) => article.category === category);
 
+  if (visibleArticles.length === 0) {
+    articleList.innerHTML = '<p class="article-meta">No notes in this category yet.</p>';
+    return;
+  }
+
   articleList.innerHTML = visibleArticles
     .map((article) => {
       const label = categoryLabels[article.category] || article.category;
@@ -338,8 +343,12 @@ function setMenuState(isOpen) {
 const allFilters = Array.from(filters || []);
 allFilters.forEach((filter) => {
   filter.addEventListener("click", () => {
-    allFilters.forEach((button) => button.classList.remove("is-active"));
+    allFilters.forEach((button) => {
+      button.classList.remove("is-active");
+      button.setAttribute("aria-pressed", "false");
+    });
     filter.classList.add("is-active");
+    filter.setAttribute("aria-pressed", "true");
     renderArticles(filter.dataset.filter);
   });
 });

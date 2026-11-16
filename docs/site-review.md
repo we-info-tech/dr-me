@@ -2,19 +2,6 @@
 
 Review of the static site (HTML, CSS, JavaScript), ordered from simplest to hardest fix. Reviewed on 2026-11-16.
 
-## Simple (one-line or tiny edits)
-
-1. **Indentation.** `finance/money-lessons.html` has its `<title>` indented 6 spaces instead of 4.
-2. **Missing `rel`.** The contact link in `index.html` uses `target="_blank"` without `rel="noopener noreferrer"`. The header LinkedIn link has it.
-3. **Mismatched `aria-label`s.** The three work cards in `index.html` have labels that don't match their content. The AI card says "Read Dishant Raut's writing" and the cloud card says "Contact … about a collaboration".
-4. **Inefficient index lookup.** `renderCardGrid` in `script.js` uses `cards.indexOf(card)` inside `.map`. Use the map index instead.
-5. **Unused data.** The `slug` field on the cards and `date: "Published"` on the articles are never used. `date` is redundant with `status`.
-6. **Dead CSS.** `.article.is-disabled` in `styles.css` is unused, because no article lacks a link. `.global-status` is declared in two places.
-7. **Nav order.** In `index.html` the nav lists Work before About, but About comes first on the page.
-8. **Naming drift.** The same section is called "Writing" in the nav, "From the notebook" in the heading, "Back to the notebook" on pages, and "Writing" in the shell label. Pick one.
-9. **Title mismatch.** The homepage card says "Life after retirement: a plan for work optionality". The page title is "After Retirement: A Life Where Work Is Optional".
-10. **Mixed ampersands.** `index.html` uses raw `&` in text. Note pages use `&amp;`.
-
 ## Easy (small, contained changes)
 
 11. **Empty homepage links.** The three work cards in `index.html` have `href=""` with `TODO` comments. Clicking one reloads the page. Point them to real pages or `#contact`.
