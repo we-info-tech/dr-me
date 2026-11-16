@@ -20,6 +20,8 @@ The current content inventory includes four reading notes, including a combined 
 
 Items 11–16 in `docs/site-review.md` are applied: the three homepage work cards link to `#contact`; every page has `theme-color`, a canonical link to `https://dishantraut.me/`, an inline SVG favicon, and Open Graph/Twitter tags (the homepage reuses its hero image); the notebook filter buttons use `aria-pressed`, `#article-list` is an `aria-live` region, and an empty category shows a message; and the wrappers note now credits Varun Mayya and opens with an intro paragraph.
 
+Items 17–22 are applied: the shell injected on note pages now includes the hamburger menu and a back-to-top button (`injectNotePageShell` runs before the menu and scroll handlers are wired); the five homepage playbook CTAs read "Coming soon" until the playbooks are written; `why-etfs`, `freedom-investing` and `steps-toward-financial-freedom` end with the same personal-note disclaimer as the homepage; coral text now uses `--coral-text` (`#b5361f`, about 5.3:1 on paper) and the contact section and second work visual use ink text on coral; and the retirement, freedom and ETF notes end with a "Related notes" list (`retirement-by-design`, `life-after-retirement`, `my-life-after-freedom`, `why-freedom`, `freedom-investing`, `why-etfs`).
+
 ## Local preview
 
 Open `index.html` in a browser, or serve the folder with a small Node static server (no packages):

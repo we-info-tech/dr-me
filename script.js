@@ -231,6 +231,8 @@ const noteShellConfig = {
   life: { sectionLabel: "Life", sectionHref: "../index.html#life", contactHref: "../index.html#contact" },
 };
 
+injectNotePageShell();
+
 const articleList = document.querySelector("#article-list");
 const filters = document.querySelectorAll(".filter");
 const menuButton = document.querySelector(".menu-button");
@@ -313,7 +315,10 @@ function injectNotePageShell() {
   header.className = "site-header";
   header.innerHTML = `
     <a class="wordmark" href="../index.html" aria-label="Dishant Raut home">DR<span>.</span></a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <a href="${config.sectionHref}">${config.sectionLabel}</a>
       <a href="${config.contactHref}">Contact</a>
     </nav>
@@ -326,8 +331,15 @@ function injectNotePageShell() {
     <a href="https://www.linkedin.com/in/dishant-raut/" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
   `;
 
+  const topLink = document.createElement("a");
+  topLink.className = "back-to-top";
+  topLink.href = "#top";
+  topLink.setAttribute("aria-label", "Back to top");
+  topLink.textContent = "\u2191";
+
   body.insertBefore(header, body.firstChild);
   body.appendChild(footer);
+  body.appendChild(topLink);
 }
 
 function setMenuState(isOpen) {
@@ -398,4 +410,3 @@ document.querySelectorAll("[data-year]").forEach((element) => {
 
 renderHomeCollections();
 renderArticles("all");
-injectNotePageShell();

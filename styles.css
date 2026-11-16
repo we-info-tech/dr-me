@@ -10,6 +10,7 @@
   --paper: #f5f2ea;
   --acid: #d5ed56;
   --coral: #ff775f;
+  --coral-text: #b5361f;
   --line: rgba(29, 42, 36, 0.2);
   --muted: #5f675f;
   --panel: #ece9de;
@@ -142,7 +143,7 @@ footer a {
 .site-nav a:hover,
 .header-link:hover,
 footer a:hover {
-  color: var(--coral);
+  color: var(--coral-text);
 }
 
 .header-link {
@@ -396,7 +397,7 @@ h1 {
 
 .visual-two {
   background: var(--coral);
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .orbit {
@@ -770,7 +771,7 @@ h1 {
 
 .strategy-subtitle {
   margin: -1.8rem 0 2.5rem;
-  color: var(--coral);
+  color: var(--coral-text);
   font: 0.72rem "DM Mono", monospace;
   text-transform: uppercase;
 }
@@ -842,7 +843,7 @@ h1 {
 
 .strategy-number {
   margin: 0 0 1.2rem;
-  color: var(--coral);
+  color: var(--coral-text);
   font-size: 1rem;
 }
 
@@ -963,7 +964,7 @@ h1 {
   margin: 2rem 0 0.85rem;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   font-weight: 600;
-  color: var(--coral);
+  color: var(--coral-text);
 }
 
 .note-content p,
@@ -1050,7 +1051,7 @@ h1 {
 
 .idea-flow-feedback {
   margin: 0.9rem 0 0.5rem;
-  color: var(--coral);
+  color: var(--coral-text);
   font-size: 0.78rem;
   font-weight: 600;
 }
@@ -1173,7 +1174,7 @@ h1 {
 .contact-section {
   padding: 6rem 5vw 2.5rem;
   min-height: 530px;
-  color: var(--paper);
+  color: var(--ink);
   background: var(--coral);
   display: grid;
   grid-template-columns: 1fr 2fr;
